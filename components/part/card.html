@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (untuk ikon panah) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .project-card {
+      border: 0;
+      background: transparent;
+    }
+    .project-card .image-wrap {
+      position: relative;
+      border-radius: 1.25rem;         /* sudut membulat seperti contoh */
+      overflow: hidden;               /* penting agar foto dan tombol ikut membulat */
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    .project-card img {
+      width: 100%;
+      height: 280px;                  /* atur tinggi sesuai kebutuhan */
+      object-fit: cover;              /* foto memenuhi area */
+      display: block;
+    }
+    /* tombol bulat di kanan-bawah foto */
+    .btn-fab {
+      position: absolute;
+      right: .75rem;
+      bottom: .75rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      background: rgba(0,0,0,.35);
+      color: #fff;
+      backdrop-filter: blur(2px);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn-fab:hover { 
+      transform: translateY(-2px); 
+      background: rgba(0,0,0,.55);
+      color: #fff;
+    }
+    .project-card .card-title {
+      margin-bottom: .25rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+    .project-card .card-subtitle {
+      color: #6c757d;
+      font-size: .95rem;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+      <div class="card project-card">
+        <div class="image-wrap">
+          <img src="../../landing/img/FOTO/3.png" alt="Amanaisia venue">
+          <a href="#" class="btn-fab" aria-label="Selengkapnya">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+        <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
+        <div class="card-body px-0 pt-3">
+          <h5 class="card-title mb-0">Amanaia</h5>
+          <div class="card-subtitle">Food and Beverages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
