@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Marketing - Elden</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Font Families */
+            --font-serif: 'Fraunces', serif;
+            --font-sans: 'Inter', sans-serif;
+            
+            /* Colors */
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #c0c0c0; /* Abu-abu muda untuk teks sekunder */
+            --color-bg-dark: #000000;
+            --color-border: #333333; /* Border pemisah yang samar */
+        }
+
+        body {
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-primary);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .font-serif { font-family: var(--font-serif); }
+        .font-sans { font-family: var(--font-sans); }
+
+        /* Latar Belakang Hero & CTA */
+        .section-textured-bg {
+            /* Menggunakan gambar tekstur gelap dan blur */
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                              url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efek parallax */
+        }
+        
+        /* === Bagian 1: Hero === */
+        .hero-section {
+            padding: 12rem 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            font-size: clamp(3rem, 10vw, 5.5rem); /* Ukuran font responsif */
+            line-height: 1.0;
+        }
+
+        .hero-title-bold {
+            font-weight: 600;
+            margin-top: -1rem; /* Judul tumpang tindih sedikit */
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            color: var(--color-text-secondary);
+            font-weight: 300;
+            margin-top: 1.5rem;
+        }
+
+        /* === Bagian 2: Intro Text === */
+        .intro-section {
+            background-color: var(--color-bg-dark);
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+        
+        .intro-text strong {
+            color: var(--color-text-primary);
+            font-weight: 400;
+        }
+        
+        /* === Bagian 3: Feature (Diagram) === */
+        .feature-section {
+            background-color: var(--color-bg-dark);
+            padding: 8rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .feature-visuals {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+        }
+        
+        /* Ini adalah "Elden" di tengah */
+        .feature-logo {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            opacity: 0.8;
+        }
+        
+        /* Kontainer untuk 3 ikon */
+        .icon-cluster {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 450px; /* Batasi lebar cluster ikon */
+            margin: 2rem 0;
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            /* Trik CSS: 
+              1. invert(1) mengubah PNG hitam menjadi putih.
+              2. opacity(0.7) membuatnya semi-transparan.
+              3. drop-shadow(...) memberikan efek 'glow' putih di sekelilingnya.
+            */
+            filter: invert(1) opacity(0.7) drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+            transition: all 0.3s ease;
+        }
+        
+        .feature-icon:hover {
+            opacity: 1;
+            filter: invert(1) opacity(1) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5));
+        }
+        
+        .feature-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .feature-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+        
+        .feature-text strong {
+            color: var(--color-text-primary);
+            font-weight: 400;
+        }
+        
+        /* === Bagian 4: CTA === */
+        .cta-section {
+            padding: 10rem 0;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            line-height: 1.2;
+        }
+        
+        .cta-title-bold {
+            font-weight: 600;
+        }
+        
+        .btn-consult {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px; /* Membuatnya bulat (pill) */
+            border: 2px solid var(--color-text-primary);
+            color: var(--color-text-primary);
+            background-color: transparent;
+            transition: all 0.3s ease;
+            margin-top: 3rem;
+        }
+        
+        .btn-consult:hover {
+            background-color: var(--color-text-primary);
+            color: var(--color-bg-dark);
+            border-color: var(--color-text-primary);
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="hero-section section-textured-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title">Narrative</h1>
+                    <h1 class="hero-title hero-title-bold">Marketing</h1>
+                    <p class="hero-subtitle">
+                        Making stories turns into a reality
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <div class="px-lg-4 text-center text-lg-start">
+                        <p class="intro-text">
+                            <strong>At Elden, we believe stories move people more than numbers ever could.</strong>
+                        </p>
+                        <p class="intro-text">
+                            Narrative marketing is about more than just crafting messages — it’s about shaping meaning. We turn brand stories into emotional journeys that connect deeply with audiences, inspire loyalty, and drive action that lasts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="container">
+            <div class="row align-items-center">
+                
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="feature-visuals">
+                        
+                        <div class="text-center" style="width: 100%;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2857/2857310.png" 
+                                 alt="Psychology Icon" 
+                                 class="feature-icon">
+                        </div>
+
+                        <div class="icon-cluster">
+                            <img src="https://cdn-icons-png.flaticon.com/512/179/179373.png" 
+                                 alt="Data Icon" 
+                                 class="feature-icon">
+                            
+                            <div class="feature-logo">&copy;Elden</div>
+                            
+                            <img src="https://cdn-icons-png.flaticon.com/512/1000/1000973.png" 
+                                 alt="Creativity Icon" 
+                                 class="feature-icon">
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="feature-text">
+                        <p>
+                            <strong>By combining data, psychology, and creativity,</strong> Elden bridges storytelling with strategy. Every narrative is built on real human insights. Measured, tested, and refined. To make sure it doesn't just sound good, but drives from concept to execution. Our cross-functional team ensures every brand story feels authentic, consistent, and powerful.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section section-textured-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <h2 class="cta-title">
+                        The only limit is your imagination.
+                    </h2>
+                    <h2 class="cta-title cta-title-bold">
+                        We make it happen.
+                    </h2>
+                    <a href="#" class="btn btn-consult">
+                        Consult Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section - Narrative Marketing</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-serif: 'Fraunces', serif;
+            --font-sans: 'Inter', sans-serif;
+            --color-bg-dark: #000000;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #c0c0c0; /* Abu-abu muda */
+        }
+
+        /* === Hero Section === */
+        .hero-narrative {
+            /* Latar belakang gelap dengan gambar dedaunan samar */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                              url('https://images.unsplash.com/photo-1558223630-9b3eb18a2806?q=80&w=1974&auto=format&fit=crop');
+            background-color: var(--color-bg-dark);
+            background-size: cover;
+            background-position: center bottom; /* Fokus di bagian bawah gambar */
+            
+            padding: 10rem 0; /* Memberi ruang vertikal yang besar */
+            color: var(--color-text-primary);
+            position: relative;
+        }
+        
+        /* Kontainer untuk judul agar bisa di-offset */
+        .hero-title-container {
+            /* Trik layout: 
+              Kita pusatkan kontainer ini, lalu di dalamnya kita 
+              ratakan teks ke kiri agar indentasi 'Marketing' bekerja.
+            */
+            display: inline-block;
+            text-align: left;
+        }
+
+        /* Judul "Narrative" */
+        .hero-title-1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 7vw, 5rem); /* Ukuran font responsif */
+            font-weight: 300; /* Tipis */
+            line-height: 1.0;
+            display: block; /* Agar 'Marketing' pindah ke baris baru */
+        }
+
+        /* Judul "Marketing" */
+        .hero-title-2 {
+            font-family: var(--font-serif);
+            font-size: clamp(4rem, 10vw, 7rem); /* Lebih besar dari 'Narrative' */
+            font-weight: 400; /* Sedikit lebih tebal */
+            line-height: 1.0;
+            display: block;
+            margin-top: -0.5rem; /* Tarik sedikit ke atas */
+            margin-left: 4rem;  /* Ini adalah indentasi kuncinya */
+        }
+        
+        /* Subjudul "Making stories..." */
+        .hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--color-text-secondary);
+            font-weight: 300;
+            margin-top: 1.5rem;
+            /* Pusatkan subjudul relatif terhadap 'Marketing' */
+            padding-left: 4rem; 
+        }
+
+        /* Penyesuaian untuk layar kecil */
+        @media (max-width: 576px) {
+            .hero-title-2, .hero-subtitle {
+                margin-left: 1rem; /* Kurangi indentasi di HP */
+                padding-left: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body style="background-color: #000;"> <section class="hero-narrative">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    
+                    <h1 class="hero-title-container">
+                        <span class="hero-title-1">Narrative</span>
+                        <span class="hero-title-2">Marketing</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Making stories turns into a reality
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

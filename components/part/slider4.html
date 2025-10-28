@@ -1,109 +1,123 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Our Clients Slider</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clients Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* CSS Kustom untuk slider klien */
+        #client-section {
+            padding: 60px 0;
+            background-color: #f8f9fa; /* Warna latar belakang abu-abu muda */
+        }
 
-<style>
-  /* --- SECTION STYLE (opsional) --- */
-  .clients-section{
-    background: radial-gradient(900px 500px at 10% -10%, #47608f40, transparent 60%),
-                radial-gradient(900px 500px at 100% 110%, #0b1c3740, transparent 60%),
-                #0f1a2b;
-    color:#eaf0ff;
-  }
-  .clients-title{
-    font-family: "The Seasons", "Playfair Display", serif;
-    font-weight:700;
-    letter-spacing:.2px;
-  }
+        .client-logo-wrapper {
+            /* Memaksa setiap logo memiliki tinggi yang sama agar rapi */
+            height: 80px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
 
-  /* --- SLIDER CORE --- */
-  .logo-slider{
-    position: relative;
-    overflow: hidden;
-  }
-  .logo-track{
-    display: flex;
-    align-items: center;
-    gap: clamp(2rem, 6vw, 4rem);
-    /* durasi geser (ubah sesuai kebutuhan) */
-    animation: scrollX 22s linear infinite;
-  }
-  /* duplikasi baris agar seamless */
-  .logo-track > .logo-item{ flex: 0 0 auto; }
+        .client-logo {
+            max-width: 100%;
+            max-height: 60px; /* Batas tinggi maks logo */
+            height: auto;
+            /* Efek grayscale dan transisi */
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease-in-out;
+        }
 
-  /* Ukuran & efek logo */
-  .logo-item img{
-    height: 48px;               /* tinggi logo seragam */
-    width: auto;
-    filter: grayscale(100%) brightness(1.2) contrast(1.05);
-    opacity: .85;
-    transition: filter .25s ease, opacity .25s ease, transform .25s ease;
-  }
-  .logo-item:hover img{
-    filter: grayscale(0%) brightness(1) contrast(1);
-    opacity: 1;
-    transform: translateY(-2px);
-  }
+        .client-logo:hover {
+            /* Efek saat di-hover */
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
 
-  /* Pause saat hover area slider */
-  .logo-slider:hover .logo-track{
-    animation-play-state: paused;
-  }
-
-  /* Responsif: tinggi logo naik di layar besar */
-  @media (min-width: 992px){
-    .logo-item img{ height: 60px; }
-  }
-
-  /* Keyframes: geser horizontal */
-  @keyframes scrollX{
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); } /* karena kita duplikasi isi jadi 50% */
-  }
-</style>
+        /* Mengatur panah navigasi carousel agar terlihat di latar putih */
+        .carousel-dark .carousel-control-prev-icon,
+        .carousel-dark .carousel-control-next-icon {
+            background-color: #ddd; /* Memberi sedikit latar belakang pada panah */
+            border-radius: 50%;
+            background-size: 60%;
+        }
+    </style>
 </head>
-<body class="bg-dark">
+<body>
 
-<section class="clients-section py-5">
-  <div class="container">
-    <div class="d-flex align-items-end justify-content-between mb-3">
-      <h2 class="clients-title m-0">Our Clients</h2>
-      <small class="text-light opacity-75">Trusted by brands</small>
-    </div>
+    <section id="client-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Happy Customer</h2>
 
-    <!-- SLIDER -->
-    <div class="logo-slider py-3">
-      <!-- Track berisi 2x kumpulan logo yang sama (untuk loop mulus) -->
-      <div class="logo-track">
+            <div id="clientCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                
+                <div class="carousel-inner">
 
-        <!-- Kumpulan A -->
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2022.svg" alt="Brand A"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Brand B"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Brand C"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Spotify_logo_without_text.svg" alt="Brand D"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Brand E"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="Brand F"></a>
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=Aesthete" class="client-logo" alt="Aesthete Logo">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=POLYTRON" class="client-logo" alt="Polytron Logo">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=MACS" class="client-logo" alt="MACS Logo">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=amanaia" class="client-logo" alt="amanaia Logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Kumpulan B (duplikasi persis A) -->
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2022.svg" alt="Brand A"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Brand B"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Brand C"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Spotify_logo_without_text.svg" alt="Brand D"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Brand E"></a>
-        <a href="#" class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="Brand F"></a>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=Client+5" class="client-logo" alt="Client 5 Logo">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=Client+6" class="client-logo" alt="Client 6 Logo">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=Client+7" class="client-logo" alt="Client 7 Logo">
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="client-logo-wrapper">
+                                    <img src="https://via.placeholder.com/150x60?text=Client+8" class="client-logo" alt="Client 8 Logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div> <button class="carousel-control-prev" type="button" data-bs-target="#clientCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#clientCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
 
-      </div>
-    </div>
-
-    <!-- OPTIONAL: teks kecil -->
-    <p class="text-center text-light opacity-75 mb-0">We partner with startups, SMEs, and enterprises.</p>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            </div> </div> </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

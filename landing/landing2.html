@@ -37,18 +37,39 @@
 
 
         .hero {
-            background-image: url('../landing/img/FOTO/hero.png'); /* Path gambar latar belakang */
-            background-size: cover;
+
+            --dim: .65;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/hero.png') center/cover no-repeat;
+            color: #fff;
+            /* background-size: cover; */
             background-position: center;
-            color: white;
-            height: 100vh; /* Membuat section hero mengisi layar penuh */
+
+            height: 100vh; 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             
         }
-        
+
+        .nowrap-1 {
+            white-space: nowrap;        /* jangan pindah baris */
+            overflow: hidden;           /* sembunyikan sisa */
+            text-overflow: ellipsis;    /* tampilkan … */
+            max-width: 100%;            /* biar responsif */
+            display: inline-block;      /* atau block/flex item */
+            }
+
+
+        .nowrap-lg {
+            white-space: normal;        /* default: boleh wrap */
+            }
+            @media (min-width: 992px){     /* ≥ lg (Bootstrap style) */
+            .nowrap-lg { white-space: nowrap; }
+            }    
+                                
 
         /* Dark mode styles */
         body.dark-mode {
@@ -117,11 +138,111 @@
 
         /* section footer */
         .footer{
-            background-image: url('../landing/img/FOTO/hero.png');
-            background-size: cover;
-            color: white;
+            --dim: .65;
+
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/hero.png') center/cover no-repeat;
+            color: #fff;
+            height: 40vh; 
         }
         /* end section footer */
+
+
+        /* .feature-card{
+        border:1px solid rgba(0,0,0,.60);
+        border-radius:1.25rem;  
+        padding:1.5rem;
+        height:100%;
+        background:#fff;
+        }
+        .feature-icon{
+        width:56px; height:56px; flex:0 0 auto;
+        }
+        .feature-title{
+        font-weight:600; 
+        font-size:1.25rem;
+        line-height:1.2;
+        margin-bottom:.25rem;
+        }
+        .feature-desc{
+        color:#666; font-size:.95rem;
+        }
+ 
+        .features-wrap{ row-gap:1.25rem }         */
+
+                /* Gaya Kustom untuk Meniru Desain Gambar */
+        .custom-card {
+            border: 1px solid #3b3939;
+            border-radius: 45px; 
+            padding: 30px;
+            text-align: left;
+            min-height: 250px; 
+            margin-bottom: 20px; 
+            
+            /* Menggunakan Flexbox */
+            display: flex;
+            align-items: flex-start; 
+            justify-content: space-between; 
+        }
+
+        .text-content {
+            flex-grow: 1; 
+            padding-right: 20px; 
+            margin-top: 65px;
+        }
+
+        .icon-container {
+            /* Margin negatif untuk mengangkat ikon */
+            margin-top: -15px;
+            margin-right: -65px; 
+            flex-shrink: 0; 
+            
+            /* Hapus properti font-size karena sekarang pakai img */
+            /* font-size: 50px; */ 
+            /* color: #000; */
+            
+            /* Atur dimensi kontainer ikon agar gambar memiliki ruang */
+            width: 200px; /* Sesuaikan lebar sesuai gambar PNG Anda */
+            height: 50px; /* Sesuaikan tinggi sesuai gambar PNG Anda */
+            
+            /* Jika gambar folder bertumpuk, styling khusus ini tidak berlaku */
+            position: relative; 
+        }
+
+        /* Styling khusus untuk ikon folder bertumpuk tidak lagi relevan */
+        /* .folder-icon-stack, .folder-icon-stack.back, dst. */
+
+        /* CSS untuk Gambar PNG di dalam icon-container */
+        .icon-container img {
+            max-width: 100%; /* Memastikan gambar tidak keluar dari container */
+            height: auto;   /* Menjaga rasio aspek gambar */
+            display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+
+            /* Jika Anda ingin kontrol ukuran yang lebih spesifik, gunakan width/height */
+            /* width: 50px; */ 
+            /* height: 50px; */
+        }
+        .img-icon {
+            width: 300px;
+        }
+        
+        .card-title-custom {
+            font-size: 1.5rem; 
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 5px; 
+            color: #333;
+        }
+
+        .card-text-custom {
+            font-size: 0.95rem; 
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 0; 
+        }
+
+
     </style>
 </head>
 
@@ -165,12 +286,12 @@
         </div> -->
 
         <div class="row">
-            <div class="row">
-                <div class="text-center">
-                    <p style="font-size: 20px;">We design </p>
-                    <p class="display-1">Authentic Content and</p>
-                    <p class="display-1">Precision Ad Strategies</p>
-                    <p style="font-size: 20px;"> that turn viewers into loyal customers for D2C brands.</p>
+            <div class="col-lg-12 ">
+                <div class="text-center" wi>
+                    <div class="" style="font-size: 30px;"> We design </div>
+                    <div class="" style="font-size: 80px;">Authentic Content and</div>
+                    <div class="" style="font-size: 80px;">Precision Ad Strategies</div>
+                    <div class="" style="font-size: 30px;"> that turn viewers into loyal customers for D2C brands.</div>
                 </div>
             </div>
         </div>
@@ -178,27 +299,20 @@
 
     <!-- Features Section -->
     <section id="connect" class="py-5">
-        <div class="container">
-
-
-            <div class="row">
-
-            </div>
-        </div>
-
-        <div class="">
+        <!-- <div class="container">
 
             <div class="row mb-5">
                 <div class="col-lg-6">
                     <div class="container">
                         <div class="d-flex justify-content-end">
-                            <div class="col-lg-8">
-                                    <p>
-                                        <strong>At Elden, we believe growth shouldn’t rely on intuition alone.</strong> 
+                            <div class="col-lg-9">
+                                    <p class="text-end">
+                                        <strong>At Elden, we believe growth shouldn’t rely on intuition alone.</strong>
+                                        
                                         With a data-driven approach, every campaign decision is guided by 
                                         key metrics like CAC, LTV, and conversion rate.
                                     </p>
-                                    <p>
+                                    <p class="text-end">
                                         Supported by A/B testing, paid advertising, and automation, 
                                         this strategy drives fast and efficient growth. Through the build-measure-learn cycle,
                                         every process is evaluated and improved without wasting time 
@@ -215,93 +329,186 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="d-flex justify-content-center mb-2">
-                    <div class="col-lg-4 border border-dark rounded-5 p-5 me-2">
-                        <div class="d-flex justify-content-end">
-                            <img class="p-0" src="../landing/img/ICONS/9.png" style="width: 250px;"/>
-                        </div>
-                        <div class="">
-                            <h2>Data-Driven Focus</h2>
-                        </div>
-                        <div class="">
-                            <p>Every decision is based on real data, not assumptions.</p>
+                <div class="row features-wrap justify-content-center">
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        
+                        <div class="feature-card d-flex gap-3">
+                            <div>
+                                <div class="feature-title">Data-Driven Focus</div>
+                                <div class="feature-desc">Every decision is based on real data, not assumptions.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 border border-dark rounded-5 p-5 me-2">
-                        <div class="d-flex justify-content-end">
-                            <img class="p-0" src="../landing/img/ICONS/9.png" style="width: 250px;"/>
-                        </div>
-                        <div class="">
-                            <h2>Data-Driven Focus</h2>
-                        </div>
-                        <div class="">
-                            <p>Every decision is based on real data, not assumptions.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 border border-dark rounded-5 p-5">
-                        <div class="d-flex justify-content-end">
-                            <img class="p-0" src="../landing/img/ICONS/9.png" style="width: 250px;"/>
-                        </div>
-                        <div class="">
-                            <h2>Data-Driven Focus</h2>
-                        </div>
-                        <div class="">
-                            <p>Every decision is based on real data, not assumptions.</p>
+
+                
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature-card d-flex gap-3">
+                            <div>
+                                <div class="feature-title">Measured ROI</div>
+                                <div class="feature-desc">Budget is allocated only to the best-performing channels.</div>
+                            </div>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
+                            </svg>
                         </div>
                     </div>
+
+                
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature-card d-flex gap-3">
+                            <div>
+                                <div class="feature-title">Cross-Functional Team</div>
+                                <div class="feature-desc">Marketing, product, and technical teams work as one unit.</div>
+                            </div>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature-card d-flex gap-3">
+                            <div>
+                                <div class="feature-title">Fast Scalability</div>
+                                <div class="feature-desc">A/B testing, automation, and paid ads deliver instant results.</div>
+                            </div>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature-card d-flex gap-3">
+                            <div>
+                                <div class="feature-title">Continuous Iteration</div>
+                                <div class="feature-desc">The build-measure-learn cycle that keeps evolving.</div>
+                            </div>
+                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                
+
                 </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col-lg-4 border border-dark rounded-5 p-5 me-2">
-                        <div class="d-flex justify-content-end">
-                            <img class="p-0" src="../landing/img/ICONS/9.png" style="width: 250px;"/>
-                        </div>
-                        <div class="">
-                            <h2>Data-Driven Focus</h2>
-                        </div>
-                        <div class="">
-                            <p>Every decision is based on real data, not assumptions.</p>
-                        </div>
+        </div> -->
+
+
+            <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Data-Driven Focus
+                        </h3>
+                        <p class="card-text-custom">
+                            Every decision is based on real data, not assumptions.
+                        </p>
                     </div>
-                    <div class="col-lg-4 border border-dark rounded-5 p-5 me-2">
-                        <div class="d-flex justify-content-end">
-                            <img class="p-0" src="../landing/img/ICONS/9.png" style="width: 250px;"/>
-                        </div>
-                        <div class="">
-                            <h2>Data-Driven Focus</h2>
-                        </div>
-                        <div class="">
-                            <p>Every decision is based on real data, not assumptions.</p>
-                        </div>
+                    
+                    <div class="icon-container">
+                        <img src="../landing/img/ICONS/9.png" alt="Data-Driven Focus Icon">
                     </div>
                 </div>
             </div>
 
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Measured ROI
+                        </h3>
+                        <p class="card-text-custom">
+                            Budget is allocated only to the best-performing channels.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="../landing/img/ICONS/10.png" alt="Measured ROI Icon">
+                    </div>
+                </div>
+            </div>
 
-
-
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Cross-Functional Team
+                        </h3>
+                        <p class="card-text-custom">
+                            Marketing, product, and technical teams work as one unit.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="../landing/img/ICONS/11.png" alt="Cross-Functional Team Icon">
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Fast Scalability
+                        </h3>
+                        <p class="card-text-custom">
+                            A/B testing, automation, and paid ads deliver instant results.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="../landing/img/ICONS/12.png" alt="Fast Scalability Icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Continuous Iteration
+                        </h3>
+                        <p class="card-text-custom">
+                            The build-measure-learn cycle that keeps evolving.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="../landing/img/ICONS/13.png" alt="Continuous Iteration Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </section>
 
 
 
-    <section id="" class="footer py-5" style="margin-top: -10rem;">
-        <div class="container" style="margin-top: 10rem;">
-
-            <div class="text-center">
-
-                <div>
-                    <p class="display-3">Want a Strategy That Truly Drives Growth?</p>
+    <section id="" class="footer" style="margin-top: 0rem;">
+        <div class="container" style="margin-top: 0rem;">
+            <div class="row">
+                <div class="text-center" style="margin-top: 7rem;">
+                    <p class="display-5">Want a Strategy That Truly Drives Growth?</p>
                 </div>
-
-
-                
             </div>
             <div class="row">
                 <div class="text-center">
                     <button class="btn btn-outline-light">Consult Now</button>
                 </div>
             </div>
+
         </div>
     </section>
 

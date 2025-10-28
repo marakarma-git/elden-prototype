@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Focus Cards - Menggunakan Ikon PNG</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Gaya Kustom untuk Meniru Desain Gambar */
+        .custom-card {
+            border: 1px solid #ddd;
+            border-radius: 20px; 
+            padding: 30px;
+            text-align: left;
+            min-height: 250px; 
+            margin-bottom: 20px; 
+            
+            /* Menggunakan Flexbox */
+            display: flex;
+            align-items: flex-start; 
+            justify-content: space-between; 
+        }
+
+        .text-content {
+            flex-grow: 1; 
+            padding-right: 20px; 
+        }
+
+        .icon-container {
+            /* Margin negatif untuk mengangkat ikon */
+            margin-top: -15px; 
+            flex-shrink: 0; 
+            
+            /* Hapus properti font-size karena sekarang pakai img */
+            /* font-size: 50px; */ 
+            /* color: #000; */
+            
+            /* Atur dimensi kontainer ikon agar gambar memiliki ruang */
+            width: 70px; /* Sesuaikan lebar sesuai gambar PNG Anda */
+            height: 50px; /* Sesuaikan tinggi sesuai gambar PNG Anda */
+            
+            /* Jika gambar folder bertumpuk, styling khusus ini tidak berlaku */
+            position: relative; 
+        }
+
+        /* Styling khusus untuk ikon folder bertumpuk tidak lagi relevan */
+        /* .folder-icon-stack, .folder-icon-stack.back, dst. */
+
+        /* CSS untuk Gambar PNG di dalam icon-container */
+        .icon-container img {
+            max-width: 100%; /* Memastikan gambar tidak keluar dari container */
+            height: auto;   /* Menjaga rasio aspek gambar */
+            display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+
+            /* Jika Anda ingin kontrol ukuran yang lebih spesifik, gunakan width/height */
+            /* width: 50px; */ 
+            /* height: 50px; */
+        }
+        
+        .card-title-custom {
+            font-size: 1.5rem; 
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 5px; 
+            color: #333;
+        }
+
+        .card-text-custom {
+            font-size: 0.95rem; 
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 0; 
+        }
+    </style>
+</head>
+<body class="bg-white p-5">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Data-Driven Focus
+                        </h3>
+                        <p class="card-text-custom">
+                            Every decision is based on real data, not assumptions.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="images/data-driven-icon.png" alt="Data-Driven Focus Icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Measured ROI
+                        </h3>
+                        <p class="card-text-custom">
+                            Budget is allocated only to the best-performing channels.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="images/measured-roi-icon.png" alt="Measured ROI Icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Cross-Functional Team
+                        </h3>
+                        <p class="card-text-custom">
+                            Marketing, product, and technical teams work as one unit.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="images/cross-functional-icon.png" alt="Cross-Functional Team Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Fast Scalability
+                        </h3>
+                        <p class="card-text-custom">
+                            A/B testing, automation, and paid ads deliver instant results.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="images/fast-scalability-icon.png" alt="Fast Scalability Icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="custom-card">
+                    <div class="text-content">
+                        <h3 class="card-title-custom">
+                            Continuous Iteration
+                        </h3>
+                        <p class="card-text-custom">
+                            The build-measure-learn cycle that keeps evolving.
+                        </p>
+                    </div>
+                    
+                    <div class="icon-container">
+                        <img src="images/continuous-iteration-icon.png" alt="Continuous Iteration Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

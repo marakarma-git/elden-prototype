@@ -37,10 +37,20 @@
 
 
         .hero {
-            background-image: url('../landing/img/FOTO/8.png'); /* Path gambar latar belakang */
+
+            --dim: .98;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/8.png') center/cover no-repeat;
+            color: white;
+
+            /* color: #fff; */
+
+            
+            /* background-image: url('../landing/img/FOTO/8.png');  */
             background-size: cover;
             background-position: center;
-            color: white;
+            
             height: 50vh; /* Membuat section hero mengisi layar penuh */
             display: flex;
             justify-content: center;
@@ -49,6 +59,14 @@
             
         }
         
+
+        .middle-content {
+            --dim: .90;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/8.png') center/cover no-repeat;
+            color: white;
+        }
 
         /* Dark mode styles */
         body.dark-mode {
@@ -117,10 +135,15 @@
 
         /* section footer */
         .footer{
-            background-image: url('../landing/img/FOTO/8.png');
-            background-size: cover;
+
+            --dim: .80;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/8.png') center/cover no-repeat;
             color: white;
             height: 30vh;
+
+            
         }
         /* end section footer */
     </style>
@@ -178,7 +201,7 @@
     </section>
 
     <!-- Features Section -->
-    <section id="connect" class="py-5" style="background-image: url('../landing/img/FOTO/8.png'); color: white;">
+    <section id="connect" class="py-5 middle-content">
         <div class="container">
             <div class="row">
                 <p>
@@ -229,13 +252,13 @@
 
 
 
-    <section id="" class="footer py-5" style="">
+    <section id="" class="footer py-4" style="">
         <div class="container" style="">
 
             <div class="text-center">
 
                 <div>
-                    <p class="display-3">The only limit is your imagination. We make it happen.</p>
+                    <p class="display-5">The only limit is your imagination. We make it happen.</p>
                 </div>
 
                 <div class="text-center">

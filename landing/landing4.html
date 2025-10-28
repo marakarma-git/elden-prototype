@@ -37,10 +37,15 @@
 
 
         .hero {
-            background-image: url('../landing/img/FOTO/hero.png'); /* Path gambar latar belakang */
-            background-size: cover;
+            --dim: .80;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/10.png') center/cover no-repeat;
+            color: white;            
+            /* background-image: url('../landing/img/FOTO/10.png');  */
+            /* background-size: cover; */
             background-position: center;
-            color: white;
+            /* color: white; */
             height: 50vh; /* Membuat section hero mengisi layar penuh */
             display: flex;
             justify-content: center;
@@ -117,9 +122,13 @@
 
         /* section footer */
         .footer{
-            background-image: url('../landing/img/FOTO/hero.png');
-            background-size: cover;
+
+            --dim: .70;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/10.png') center/cover no-repeat;
             color: white;
+            height: 30vh;
         }
         /* end section footer */
     </style>
@@ -167,9 +176,10 @@
         <div class="row">
 
             <div class="row">
-                <div class="text-center">
+                <div class="text-center col-lg-12">
                     <p style="font-size: 20px;">Making contents that’s</p>
-                    <p class="display-1">Beauty from the insight and outsite</p>
+                    <p class="display-3">Beauty from the</p>
+                    <p class="display-3"><span style="text-decoration: underline;">insight</span>  and <span style="text-decoration: underline;">outsite</span> </p>
 
                 </div>
             </div>
@@ -193,23 +203,15 @@
             </div>
 
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="row" style="border-radius: 100px 0px 0px 100px; border: solid;">
-                                <p>Creative Visual</p>
-                                <p>the eye</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <img src="../landing/img/icons2/14-removebg-preview.png" class=""  />
-                        </div>
-                    </div>
-                </div>
+                <img src="../landing/img/FOTO/content.png" class="" style="width: 45%;"  />
             </div>
 
             <div class="row text-center">
-                <p>We’ve successfully helped these brands grow their business.</p>
+                <p>
+                    From storytelling and SEO to multi-platform distribution, every piece of content is planned to meet both 
+                    audience needs and business goals. Through collaboration across strategy, creative, and analytics, Elden ensures 
+                    that your content doesn’t just get seen,  it gets remembered.
+                </p>
             </div>
 
         </div>
@@ -221,33 +223,21 @@
 
 
 
-    <section id="" class="footer py-5" style="margin-top: -10rem;">
-        <div class="container" style="margin-top: 10rem;">
+    <section id="" class="footer py-4" style="">
+        <div class="container" style="margin-top: 4rem;">
 
             <div class="text-center">
-                <img class="img-fluid" src="../landing/img/LOGO/PNG/elden png white_1.png" style="width: 200px;"/>
-            </div>
 
-            <div class="text-center">
-                <div class="" style="margin-bottom: -2rem; margin-right: 11rem;">
-                    <p style="font-size: 20px;">One and Only</p>
-                </div>
                 <div>
-
-                    <p class="display-1">Network</p>
+                    <p class="display-5">The only limit is your imagination. We make it happen.</p>
                 </div>
 
-                <div class="" style="margin-top: -2.5rem; margin-left: 10rem;">
-
-                    <p style="font-size: 20px">you’ll ever need </p>
+                <div class="text-center">
+                    <button class="btn btn-outline-light">Consult Now</button>
                 </div>
                 
             </div>
-            <div class="row">
-                <div class="text-center">
-                    <p class="">Elden is a strategic partner for businesses that want to grow fast, connect with audiences on an emotional level, and maximize the potential of digital content.</p>
-                </div>
-            </div>
+
         </div>
     </section>
 
