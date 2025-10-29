@@ -6,152 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Landing Page</title>
 
-    <!-- Link ke Google Font "The Seasons" -->
     <link href="https://db.onlinewebfonts.com/c/9366bd460113d8bf675fd2bdfe1ce764?family=The+Seasons" rel="stylesheet">
-
-    <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    
-    <!-- Custom CSS -->
     <style>
-        /* Smooth scroll untuk seluruh halaman */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Spasi agar konten tidak tertutup navbar fixed */
         body {
             padding-top: 4.5rem;
             font-family: "The Seasons";
         }
 
-        /* Hero */
-        /* .hero {
-            min-height: 85vh;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-        } */
-
-
         .hero {
-
             --dim: .98;
             background:
                 linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
                 url('../landing/img/FOTO/8.png') center/cover no-repeat;
             color: white;
-
-            /* color: #fff; */
-
-            
-            /* background-image: url('../landing/img/FOTO/8.png');  */
             background-size: cover;
             background-position: center;
-            
-            height: 50vh; /* Membuat section hero mengisi layar penuh */
+            min-height: 60vh; 
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            
+            overflow: hidden; 
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 8rem); 
+            line-height: 1; 
+            font-weight: bold;
+            margin-bottom: 1.5rem; 
+            width: 100%; 
+        }
+
+        .hero-title .line-1 {
+            display: block; 
+            text-align: left; 
+        }
+
+        .hero-title .line-2 {
+            display: block; 
+            text-align: right; 
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.75rem); 
+            font-weight: normal;
+            text-align: center; 
+            margin-top: 2rem; 
         }
         
-
         .middle-content {
             --dim: .90;
             background:
                 linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                /* PERBAIKAN: Ganti URL ini dengan gambar 'image_6026a9.jpg' Anda */
                 url('../landing/img/FOTO/8.png') center/cover no-repeat;
             color: white;
         }
 
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: white;
-        }
+        /* === PERUBAHAN CSS DIMULAI DI SINI === */
 
-        .dark-mode .navbar,
-        .dark-mode .card {
-            background-color: #333;
-            color: white;
-        }
-
-        .dark-mode .btn,
-        .dark-mode .btn-outline-light {
-            color: white;
-            border-color: white;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 50%;
-            padding: 10px;
-            font-size: 20px;
-            display: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .back-to-top img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .whatsapp-bubble {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-        }
-
-        .whatsapp-bubble img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .whatsapp-bubble:hover {
-            background-color: #128C7E;
-        }
-
-
-
-        /* section footer */
-        .footer{
-
-            --dim: .80;
-            background:
-                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
-                url('../landing/img/FOTO/8.png') center/cover no-repeat;
-            color: white;
-            height: 30vh;
-
+        .text-box-right {
+            border: 1px solid white; /* Terapkan border ke semua sisi */
+            border-right: none; /* Hapus border kanan agar 'bleed' */
             
+            /* Terapkan radius hanya di sisi kiri */
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+            
+            /* Pastikan sisi kanan tidak ada radius */
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            
+            height: 100%; /* Pastikan kotak mengisi tinggi kolom */
+            display: flex;
+            align-items: center; /* Menengahkan teks secara vertikal */
         }
-        /* end section footer */
+        
+        /* === PERUBAHAN CSS SELESAI DI SINI === */
+
+        
+        body.dark-mode { background-color: #121212; color: white; }
+        .dark-mode .navbar, .dark-mode .card { background-color: #333; color: white; }
+        .dark-mode .btn, .dark-mode .btn-outline-light { color: white; border-color: white; }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background-color: #007bff; color: white; border-radius: 50%; padding: 10px; font-size: 20px; display: none; border: none; cursor: pointer; z-index: 99; }
+        .back-to-top img { width: 30px; height: 30px; }
+        .whatsapp-bubble { position: fixed; bottom: 90px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; padding: 15px; font-size: 25px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; z-index: 99; }
+        .whatsapp-bubble img { width: 40px; height: 40px; }
+        .whatsapp-bubble:hover { background-color: #128C7E; }
+        .footer { --dim: .80; background: linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))), url('../landing/img/FOTO/8.png') center/cover no-repeat; color: white; min-height: 30vh; display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Landing Page</a>
@@ -181,122 +134,83 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    
     <section id="home" class="hero">
-        <!-- <div>
-            <h1>Welcome to Our Landing Page</h1>
-            <p>Explore our amazing services and features. Stay connected with us!</p>
-        </div> -->
-
-        <div class="row">
-            <div class="row">
-                <div class="text-center">
-                    <p class="display-1">Narrative</p>
-                    <p class="display-1">Marketing</p>
-                    <p style="font-size: 20px;">Making stories turns into a reality</p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-10">
+                    <h1 class="hero-title">
+                        <span class="line-1">Narrative</span>
+                        <span class="line-2">Marketing</span>
+                    </h1>
+                    <p class="hero-subtitle">Making stories turns into a reality</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Features Section -->
+
     <section id="connect" class="py-5 middle-content">
+        
         <div class="container">
             <div class="row">
-                <p>
+                <p class="pb-5">
                     At Elden, we believe stories move people more than numbers ever could.
                     Narrative marketing is about more than just crafting messages — it’s about shaping meaning. 
                     We turn brand stories into emotional journeys that connect deeply with audiences, 
                     inspire loyalty, and drive action that lasts.
                 </p>
             </div>
-
-            <!-- <div class="row ">
-                <div class="col-lg-">
-                    <img class="" src="../landing/img/FOTO/9.png" style="width: 700px;" />
-                </div>
-                <div class="border">
-
-                </div>
-            </div> -->
-
         </div>
 
-        <div class="">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="d-flex justify-content-end">
-                        <img class="" src="../landing/img/FOTO/9.png" style="width: 800px;" />
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row p-5" style="margin-top: 11rem; border-radius: 100px 0px 0px 100px; border: solid;">
-                        <p>
-                            By combining data, psychology, and creativity, 
-                            Elden bridges storytelling with strategy. Every narrative is built on real human insight. 
-                            Measured, tested, and refined. To make sure it doesn’t just sound good, but works. 
-                            From concept to execution, our cross-functional team ensures every brand story feels authentic, 
-                            consistent, and powerful.
-                        </p>
-                    </div>
-
-                </div>
+        <div class="row g-0 align-items-center">
+            
+            <div class="col-lg-6 p-5 text-center">
+                <img class="img-fluid" src="../landing/img/FOTO/9.png" alt="Elden Diagram" />
             </div>
 
+            <div class="col-lg-6">
+                <div class="text-box-right p-5">
+                    <p>
+                        By combining data, psychology, and creativity, 
+                        Elden bridges storytelling with strategy. Every narrative is built on real human insight. 
+                        Measured, tested, and refined. To make sure it doesn’t just sound good, but works. 
+                        From concept to execution, our cross-functional team ensures every brand story feels authentic, 
+                        consistent, and powerful.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-
-
-
-
-
-    <section id="" class="footer py-4" style="">
-        <div class="container" style="">
-
+    <section id="" class="footer py-4">
+        <div class="container">
             <div class="text-center">
-
                 <div>
-                    <p class="display-5">The only limit is your imagination. We make it happen.</p>
+                    <p class="display-6 display-lg-5">The only limit is your imagination. We make it happen.</p>
                 </div>
-
                 <div class="text-center">
                     <button class="btn btn-outline-light">Consult Now</button>
                 </div>
-                
             </div>
-
         </div>
     </section>
 
-
-
-
-
-
-
-    <!-- WhatsApp Bubble -->
     <div class="whatsapp-bubble" onclick="window.location.href='https://wa.me/1234567890'">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </div>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTopBtn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Arrow_up_font_awesome.svg/1200px-Arrow_up_font_awesome.svg.png" alt="Back to Top">
     </button>
 
-    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     
     <script>
-        // Dark mode toggle
         document.getElementById('toggleDarkMode').addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
 
-        // Back to top button visibility
         window.onscroll = function () {
             var backToTopBtn = document.getElementById("backToTopBtn");
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -306,12 +220,10 @@
             }
         };
 
-        // Back to top button functionality
         document.getElementById("backToTopBtn").addEventListener("click", function () {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
 
 </body>
-
 </html>

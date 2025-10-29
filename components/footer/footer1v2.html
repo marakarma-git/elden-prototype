@@ -1,165 +1,94 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Section (Responsive)</title>
-
+    <title>Growth Plan Section</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            /* Font Families */
-            --font-serif: 'Fraunces', serif;
-            --font-sans: 'Inter', sans-serif;
-            
-            /* Colors */
-            --color-bg-dark: #0a0f18; /* Latar belakang biru/abu sangat gelap */
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #c0c0c0; /* Abu-abu pudar */
-        }
-
-        body {
-            /* Hanya untuk demo */
-            background-color: #f0f0f0; 
-        }
-
-        /* === Footer Section === */
-        .footer-contact {
-            /* Latar belakang gelap bertekstur */
-            background-image: linear-gradient(rgba(10, 15, 24, 0.95), rgba(10, 15, 24, 0.95)), 
-                              url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto-format&fit=crop');
-            background-color: var(--color-bg-dark);
-            background-size: cover;
-            background-position: center;
-            
-            padding: 5rem 0; /* Padding atas dan bawah */
-            color: var(--color-text-primary);
-            position: relative;
-        }
-
-        .footer-flex-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 40vh; /* Atur ketinggian minimum footer */
-        }
-        
-        /* Judul "Discuss your growth plan!" */
-        .footer-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.25rem, 6vw, 3.5rem); /* Ukuran font responsif */
-            font-weight: 500;
-            color: var(--color-text-primary);
-            line-height: 1.2;
-        }
-
-        /* Subjudul "We'll be happy..." */
-        .footer-subtitle {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            font-weight: 400;
-            line-height: 1.6;
-            max-width: 600px; /* Batasi lebar teks */
-        }
-
-        /* Logo "Elden" di kiri bawah */
-        .footer-logo {
-            font-family: var(--font-sans);
-            font-weight: 700; /* Bold */
-            font-size: 1.5rem;
-            color: var(--color-text-primary);
-            text-decoration: none;
-            display: inline-block; /* Diperlukan untuk margin */
-        }
-        
-        /* === PERUBAHAN CSS UNTUK IKON PNG === */
-
-        /* Ikon di kanan bawah */
-        .footer-social-icons a {
-            /* Properti 'color' dan 'font-size' dihapus */
-            text-decoration: none;
-            margin-left: 1.75rem; /* Jarak antar ikon */
-            transition: opacity 0.3s ease;
-            display: inline-block; /* Baik untuk membungkus gambar */
-        }
-        
-        .footer-social-icons a:hover {
-            opacity: 0.7;
-        }
-        
-        /* Styling untuk <img> di dalam link */
-        .footer-social-icons img {
-            width: 30px; /* Atur lebar ikon */
-            height: 30px; /* Atur tinggi ikon */
-            
-            /* Trik CSS: 
-               Filter ini mengubah PNG hitam menjadi putih.
+        /* CSS Kustom */
+        .growth-plan-section {
+            /* Ganti 'path/to/background-image.jpg' dengan path gambar Anda 
+              (Contoh: nama file 'image_6dca44.jpg' yang Anda unggah pertama kali)
             */
-            filter: invert(1);
-        }
-        /* === AKHIR PERUBAHAN CSS === */
-        
-        
-        /* Di layar kecil, hilangkan margin kiri ikon pertama */
-        @media (max-width: 767.98px) {
-            .footer-social-icons a:first-child {
-                margin-left: 0;
-            }
-            /* Beri jarak antara ikon dan logo saat menumpuk */
-            .footer-logo {
-                margin-bottom: 1.5rem;
-            }
+            background-image: url('../../landing/img/FOTO/gradient.png');
+            
+            /* Properti tambahan untuk background image */
+            background-size: cover;       /* Memastikan gambar menutupi seluruh section */
+            background-position: center;  /* Memposisikan gambar di tengah */
+            background-repeat: no-repeat; /* Mencegah gambar berulang */
+            
+            /* Warna fallback (jaga-jaga jika gambar gagal dimuat) */
+            background-color: #1a2035; 
+            
+            color: #ffffff;
+            padding: 6rem 0; /* Memberi padding atas dan bawah yang cukup */
         }
 
+        .growth-plan-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .growth-plan-section p {
+            font-family: 'Lato', sans-serif;
+            opacity: 0.9;
+        }
+
+        .elden-logo {
+            height: 45px; /* Anda bisa ubah nilainya */
+            width: auto;
+        }
+
+        .social-icon {
+            height: 120px; /* Anda bisa ubah nilainya */
+            width: 120px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
 
-    <footer>
-        <section class="footer-contact">
-            <div class="container footer-flex-container">
-                
-                <div class="footer-content mb-5">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <h2 class="footer-title">
-                                Discuss your growth plan!
-                            </h2>
-                            <p class="footer-subtitle">
-                                We'll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-bar mt-auto">
-                    <div class="d-md-flex justify-content-md-between align-items-md-center text-center text-md-start">
-                        
-                        <a href="#" class="footer-logo">
-                            Elden
-                        </a>
-                        
-                        <div class="footer-social-icons">
-                            <a href="#" aria-label="WhatsApp">
-                                <img src="https://cdn-icons-png.flaticon.com/512/174/174879.png" alt="WhatsApp">
-                            </a>
-                            <a href="#" aria-label="Instagram">
-                                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
-                            </a>
-                            <a href="#" aria-label="Email">
-                                <img src="https://cdn-icons-png.flaticon.com/512/542/542689.png" alt="Email">
-                            </a>
-                        </div>
-                    </div>
+    <section class="growth-plan-section">
+        <div class="container">
+            <div class="row mb-5 pb-5">
+                <div class="col-lg-8 col-md-10">
+                    <h1 class="display-3">Discuss your growth plan!</h1>
+                    <p class="lead mt-3">
+                        We'll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results
+                    </p>
                 </div>
             </div>
-        </section>
-    </footer>
+
+            <div class="row align-items-center mt-5">
+                
+                <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <img src="path/to/elden-logo.png" alt="Elden Logo" class="elden-logo">
+                </div>
+
+                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center gap-3">
+                    
+                    <a href="#" aria-label="WhatsApp">
+                        <img src="../../landing/img/ICONS/6.png" alt="WhatsApp" class="social-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Instagram">
+                        <img src="../../landing/img/ICONS/7.png" alt="Instagram" class="social-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Email">
+                        <img src="../../landing/img/ICONS/8.png" alt="Email" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

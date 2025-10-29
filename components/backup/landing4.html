@@ -15,15 +15,6 @@
     
     <!-- Custom CSS -->
     <style>
-
-        :root {
-
-            
-            /* Colors */
-            --color-bg-dark: #000000;
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #e0e0e0; /* Putih pudar */
-        }
         /* Smooth scroll untuk seluruh halaman */
         html {
             scroll-behavior: smooth;
@@ -35,74 +26,34 @@
             font-family: "The Seasons";
         }
 
-                .hero-authentic {
-            background-color: var(--color-bg-dark);
-            padding: 10rem 0; /* Memberi ruang vertikal yang besar */
-            overflow: hidden; /* Mencegah horizontal scroll */
-        }
-        
-        .hero-pretitle {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            margin-bottom: 0.5rem;
-            text-align: left; 
-        }
+        /* Hero */
+        /* .hero {
+            min-height: 85vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        } */
 
-        .hero-title-cluster {
-            position: relative;
-            display: inline-block; 
-        }
-        
-        .cluster-wrapper {
-            text-align: left;
-        }
 
-        .hero-title-authentic {
-            font-family: var(--font-serif);
-            font-size: clamp(5rem, 12vw, 9rem); 
-            font-weight: 600; 
-            line-height: 1.0;
-            margin: 0;
-            color: var(--color-text-primary);
-        }
-        
-        .hero-subtitle-ideas {
-            font-family: var(--font-serif);
-            font-size: clamp(4rem, 10vw, 7rem); 
-            font-weight: 400; 
-            font-style: normal; 
-            line-height: 1.5;
-            color: var(--color-text-primary);
-            position: absolute;
+        .hero {
+            --dim: .80;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/10.png') center/cover no-repeat;
+            color: white;            
+            /* background-image: url('../landing/img/FOTO/10.png');  */
+            /* background-size: cover; */
+            background-position: center;
+            /* color: white; */
+            height: 50vh; /* Membuat section hero mengisi layar penuh */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             
-            left: 97%;
-            /* === PERUBAHAN UTAMA DI SINI === */
-            /* Nilai 'top' ditambah agar posisi 'Ideas' lebih ke bawah */
-            top: 4.5rem; /* <<< DIUBAH (sebelumnya 2rem) */
         }
         
-        /* Penyesuaian untuk layar kecil */
-        @media (max-width: 992px) {
-            .hero-subtitle-ideas {
-                left: 60%;
-                top: 3.5rem; /* <<< DIUBAH (sebelumnya 1.5rem) */
-            }
-        }
-        
-        @media (max-width: 576px) {
-             .hero-title-authentic { 
-                font-size: 4rem; /* Kecilkan font di HP */
-             }
-             .hero-subtitle-ideas { 
-                font-size: 3rem; /* 'Ideas' juga dikecilkan */
-                left: 95%;
-                top: 2.5rem; /* <<< DIUBAH (sebelumnya 2rem) */
-             }
-        }
-
-
-
 
         /* Dark mode styles */
         body.dark-mode {
@@ -168,52 +119,18 @@
         }
 
 
-        .cta-footer-audience {
-            /* Latar belakang gelap dengan gambar audiens */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                              url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto-format&fit=crop');
-            background-color: var(--color-bg-dark);
-            background-size: cover;
-            background-position: center;
-            
-            /* === PERUBAHAN KETINGGIAN DI SINI === */
-            padding: 10rem 0; /* Diubah dari 7rem agar lebih tinggi */
-            
-            color: var(--color-text-primary);
-            position: relative;
-            text-align: center;
-        }
-        
-        /* Judul "Make it genuine." */
-        .cta-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.25rem, 6vw, 3.25rem); 
-            font-weight: 400; /* Regular */
-            color: var(--color-text-primary);
-            line-height: 1.2;
-            margin-bottom: 2.5rem; /* Jarak ke tombol */
-        }
 
-        /* Tombol "Consult Now!" */
-        .btn-consult-footer {
-            font-family: var(--font-sans);
-            font-weight: 400; /* Regular */
-            font-size: 1rem;
-            color: var(--color-text-primary);
-            background-color: transparent;
-            border: 2px solid var(--color-text-primary);
-            border-radius: 50px; 
-            padding: 0.75rem 2.5rem; 
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        /* Efek Hover */
-        .btn-consult-footer:hover {
-            color: var(--color-bg-dark);
-            background-color: var(--color-text-primary);
-        }
+        /* section footer */
+        .footer{
 
+            --dim: .70;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/10.png') center/cover no-repeat;
+            color: white;
+            height: 30vh;
+        }
+        /* end section footer */
     </style>
 </head>
 
@@ -249,47 +166,81 @@
         </div>
     </nav>
 
-    <!-- <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- <div>
+            <h1>Welcome to Our Landing Page</h1>
+            <p>Explore our amazing services and features. Stay connected with us!</p>
+        </div> -->
 
-    </section> -->
+        <div class="row">
 
-    <section class="hero-authentic">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    
-                    <p class="hero-pretitle">We make sure that every thought, process, and step is an</p>
-                    
-                    <div class="cluster-wrapper">
-                        <div class="hero-title-cluster">
-                            <h1 class="hero-title-authentic">Authentic</h1>
-                            <h2 class="hero-subtitle-ideas">Ideas</h2>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="text-center col-lg-12">
+                    <p style="font-size: 20px;">Making contents that’s</p>
+                    <p class="display-3">Beauty from the</p>
+                    <p class="display-3"><span style="text-decoration: underline;">insight</span>  and <span style="text-decoration: underline;">outsite</span> </p>
 
                 </div>
             </div>
+
+
         </div>
     </section>
 
-
-    <section class="cta-footer-audience">
+    <!-- Features Section -->
+    <section id="connect" class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    
-                    <h2 class="cta-title">
-                        Make it genuine.
-                    </h2>
-                    
-                    <a href="#" class="btn-consult-footer">
-                        Consult Now!
-                    </a>
+            <div class="row">
+                <p class="">
+                    At Elden, we believe consistency builds trust and trust drives growth.
+                    Content marketing isn’t just about producing posts or articles; it’s about creating value that connects. 
+                    We craft purposeful content strategies that educate, inspire, and engage. 
+                    Turning your brand into a trusted voice in its field.
 
-                </div>
+                </p>
+                
             </div>
+
+            <div class="row d-flex justify-content-center">
+                <img src="../landing/img/FOTO/content.png" class="" style="width: 45%;"  />
+            </div>
+
+            <div class="row text-center">
+                <p>
+                    From storytelling and SEO to multi-platform distribution, every piece of content is planned to meet both 
+                    audience needs and business goals. Through collaboration across strategy, creative, and analytics, Elden ensures 
+                    that your content doesn’t just get seen,  it gets remembered.
+                </p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <section id="" class="footer py-4" style="">
+        <div class="container" style="margin-top: 4rem;">
+
+            <div class="text-center">
+
+                <div>
+                    <p class="display-5">The only limit is your imagination. We make it happen.</p>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-outline-light">Consult Now</button>
+                </div>
+                
+            </div>
+
         </div>
     </section>
+
 
 
 

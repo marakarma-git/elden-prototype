@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elden Creative Network</title>
+
+    <!-- Link ke Google Font "The Seasons" -->
+    <link href="https://db.onlinewebfonts.com/c/9366bd460113d8bf675fd2bdfe1ce764?family=The+Seasons" rel="stylesheet">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Smooth scroll untuk seluruh halaman */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Spasi agar konten tidak tertutup navbar fixed */
+        body {
+            padding-top: 4.5rem;
+            font-family: "The Seasons";
+            
+            
+        }
+
+        /* Hero */
+        /* .hero {
+            min-height: 85vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        } */
+
+
+        .hero {
+            --dim: .65;
+            background:
+                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+                url('../landing/img/FOTO/hero.png') center/cover no-repeat;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+       
+        }
+
+           
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .navbar,
+        .dark-mode .card {
+            background-color: #333;
+            color: white;
+        }
+
+        .dark-mode .btn,
+        .dark-mode .btn-outline-light {
+            color: white;
+            border-color: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 20px;
+            display: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-to-top img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .whatsapp-bubble {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .whatsapp-bubble img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .whatsapp-bubble:hover {
+            background-color: #128C7E;
+        }
+
+
+
+        /* section footer */
+        .footer{
+        --dim: .70;
+        background:
+            linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
+            url('../landing/img/FOTO/hero.png') center/cover no-repeat;
+        /* background-size: cover; */
+        color: #fff;
+        }
+        /* end section footer */
+
+
+        /* card  */
+    .project-card {
+      border: 0;
+      background: transparent;
+    }
+    .project-card .image-wrap {
+      position: relative;
+      border-radius: 1.25rem;         /* sudut membulat seperti contoh */
+      overflow: hidden;               /* penting agar foto dan tombol ikut membulat */
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    .project-card img {
+      width: 100%;
+      height: 564px;                  /* atur tinggi sesuai kebutuhan */
+      object-fit: cover;              /* foto memenuhi area */
+      display: block;
+    }
+    /* tombol bulat di kanan-bawah foto */
+    .btn-fab {
+      position: absolute;
+      right: .75rem;
+      bottom: .75rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      background: rgba(0,0,0,.35);
+      color: #fff;
+      backdrop-filter: blur(2px);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn-fab:hover { 
+      transform: translateY(-2px); 
+      background: rgba(0,0,0,.55);
+      color: #fff;
+    }
+    .project-card .card-title {
+      margin-bottom: .25rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+    .project-card .card-subtitle {
+      color: #6c757d;
+      font-size: .95rem;
+    }
+     /* end card */
+
+
+/* wee connect */
+
+    .metric-number{
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      line-height:.9; font-weight:400;
+    }
+    .metric-plus{
+      font-size: clamp(1rem, 2.2vw, 3.4rem);
+      letter-spacing:.25rem; line-height:1; margin-bottom:.25rem;
+    }
+    .metric-text{
+      font-size: clamp(1rem, 2.4vw, 1.5rem);
+      line-height:1.05; margin:0;
+    }
+    .pill-img{ height:140px; 
+        /* border-radius:9999px;  */
+        overflow:hidden; 
+    }
+    .pill-img img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    @media (min-width: 992px){ .pill-img{ height:180px; } }
+
+/* end we connect */
+
+
+  /* Section hero */
+
+   .cta-hero{
+    min-height: 65vh;
+    color: #eef3ff;
+    background:
+      radial-gradient(1000px 600px at 10% -10%, rgba(101,145,214,.35), transparent 60%),
+      radial-gradient(900px 600px at 100% 120%, rgba(15,43,90,.45), transparent 60%),
+      url("../landing/img/FOTO/gradient.png") center/cover no-repeat; /* ganti sesuai aset */
+    position: relative;
+    overflow: hidden;
+  } 
+  .cta-hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(3,9,20,.15), rgba(3,9,20,.35));
+    pointer-events:none;
+  }
+
+  .cta-title{
+    /* font-family: "The Seasons", "Playfair Display", serif; */
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: .95;
+    font-size: clamp(2.2rem, 8vw, 5rem);
+  }
+  .cta-sub{
+    color: #c9d6ff;
+    font-size: clamp(.95rem, 1.6vw, 1.05rem);
+    margin-top: .25rem;
+    max-width: 60ch;
+  }
+
+  /* Tambah padding bawah setinggi bar bawah agar konten tak tertutup */
+  .pb-hero-bottom{ padding-bottom: 92px; } /* 92px ~ tinggi bar+jarak */
+
+  /* Bar bawah: logo kiri, sosmed kanan */
+  .cta-bottom{
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: .85rem 0;
+    z-index: 2;
+  }
+
+  /* Ikon PNG di dalam ring */
+  .icon-img{
+    width: 150px; height: 100px;
+    /* object-fit: contain;
+    display: block; */
+  }
+
+  /* Responsif kecil: rapatkan sedikit */
+  @media (max-width: 575.98px){
+    .icon-ring{ width: 40px; height: 40px; }
+    .icon-img{ width: 20px; height: 20px; }
+    .pb-hero-bottom{ padding-bottom: 86px; }
+  }
+
+    /* --- SECTION STYLE (opsional) --- */
+    .clients-section{
+        background: radial-gradient(900px 500px at 10% -10%, #47608f40, transparent 60%),
+                    radial-gradient(900px 500px at 100% 110%, #0b1c3740, transparent 60%),
+                    #0f1a2b;
+        color:#eaf0ff;
+    }
+    .clients-title{
+        font-family: "The Seasons", "Playfair Display", serif;
+        font-weight:700;
+        letter-spacing:.2px;
+    }
+
+    /* --- SLIDER CORE --- */
+    .logo-slider{
+        position: relative;
+        overflow: hidden;
+    }
+    .logo-track{
+        display: flex;
+        align-items: center;
+        /* gap: clamp(2rem, 6vw, 0rem); */
+        /* durasi geser (ubah sesuai kebutuhan) */
+        animation: scrollX 22s linear infinite;
+    }
+    /* duplikasi baris agar seamless */
+    .logo-track > .logo-item{ flex: 0 0 auto; }
+
+    /* Ukuran & efek logo */
+    .logo-item img{
+        height: 48px;               /* tinggi logo seragam */
+        width: auto;
+        /* filter: grayscale(100%) brightness(1.2) contrast(1.05); */
+        opacity: .85;
+        transition: filter .25s ease, opacity .25s ease, transform .25s ease;
+    }
+    .logo-item:hover img{
+        filter: grayscale(0%) brightness(1) contrast(1);
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+
+    /* Pause saat hover area slider */
+    .logo-slider:hover .logo-track{
+        animation-play-state: paused;
+    }
+
+    /* Responsif: tinggi logo naik di layar besar */
+    @media (min-width: 992px){
+        .logo-item img{ height: 60px; }
+    }
+
+    /* Keyframes: geser horizontal */
+    @keyframes scrollX{
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); } /* karena kita duplikasi isi jadi 50% */
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Landing Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#connect">Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#client">Client</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light" id="toggleDarkMode">Toggle Dark Mode</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="row">
+            <div class="text-center" style="margin-top: -10px;">
+                <img src="../landing/img/LOGO/PNG/elden png white_1.png" style="width: 200px;">
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <p class="" style="font-size: 30px; line-height: 0;">Stop Making</p>
+                    <p class="" style="font-size: 100px; margin-top: -36px;">Contents</p>
+                    <p class="" style="font-size: 30px; line-height: 0;">Start Making</p>
+                    <p class="" style="font-size: 100px; margin-top: -36px;">Connection</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="text-center">
+                    <p style="font-size: 20px;">Using our growth formula, we turn creativity into conversions. Content & ad strategies designed for maximum ROAS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-5">
+        <div class="container">
+            <div class="">
+                <p class="display-6">We Connect</p>
+                <p class="display-1">Company and People</p>
+            </div>
+
+            <div class="row text-center">
+                <p>We’ve successfully helped these brands grow their business.</p>
+            </div>
+
+            <div class="row">
+
+            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="image-wrap">
+                    <img src="../landing/img/FOTO/4.png" alt="Amanaisia venue">
+                    <a href="#" class="btn-fab" aria-label="Selengkapnya">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    </div>
+                    <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
+                    <div class="card-body px-0 pt-3">
+                    <h5 class="card-title mb-0">Amanaia</h5>
+                    <div class="card-subtitle">Food and Beverages</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="image-wrap">
+                    <img src="../landing/img/FOTO/4.png" alt="Amanaisia venue">
+                    <a href="#" class="btn-fab" aria-label="Selengkapnya">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    </div>
+                    <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
+                    <div class="card-body px-0 pt-3">
+                    <h5 class="card-title mb-0">Amanaia</h5>
+                    <div class="card-subtitle">Food and Beverages</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+                <div class="card project-card">
+                    <div class="image-wrap">
+                    <img src="../landing/img/FOTO/4.png" alt="Amanaisia venue">
+                    <a href="#" class="btn-fab" aria-label="Selengkapnya">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    </div>
+                    <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
+                    <div class="card-body px-0 pt-3">
+                    <h5 class="card-title mb-0">Amanaia</h5>
+                    <div class="card-subtitle">Food and Beverages</div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+
+        <div class="">
+            <div class="row text-center">
+                <p>and the others for more than:</p>
+            </div>
+
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="d-flex justify-content-end">
+                        <div class="col-auto col-lg-2">
+                            <div class="metric-number">65</div>
+                        </div>
+                        <div class="col-auto col-lg-2">
+                            <div class="d-flex flex-column justify-content-center">
+                            <div class="metric-plus">++</div>
+                            <p class="metric-text mb-0">Project<br>Finished</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="pill-img" style="border-radius: 100px 0px 0px 100px;">
+                    <img src="../landing/img/FOTO/13.png" alt="Sample">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <p>and</p>
+            </div>
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6">
+                    <div class="pill-img" style="border-radius: 0px 100px 100px 0px;">
+                    <img src="../landing/img/FOTO/13.png" alt="Sample">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex justify-content-start">
+                        <div class="col-auto col-lg-2">
+                            <div class="metric-number">31</div>
+                        </div>
+                        <div class="col-auto col-lg-2">
+                            <div class="d-flex flex-column justify-content-center">
+                            <div class="metric-plus">++</div>
+                            <p class="metric-text mb-0">Brand<br>Partners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="service" class="py-5 text-white" style="background-image:url('../landing/img/FOTO/gradient.png'); background-size:cover; background-position:center;">
+        <div class="container">
+            <div class="text-center mb-4">
+            <p class="display-4 mb-0" style="font-family:'The Seasons','Playfair Display',serif;">What We Do?</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+            <!-- CARD 1 -->
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="position-relative h-100 p-4 rounded-5 border border-1"
+                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
+                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
+                    Content<br>Marketing
+                </h2>
+                <p class="mb-5" style="color:#e6eeff;">Leverage content from creators who already have an audience. Fast, cost-efficient, and effective in increasing engagement organically.</p>
+
+                <!-- panah -->
+                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
+                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
+                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12h16"/>
+                        <path d="M13 6l7 6-7 6"/>
+                        </g>
+                    </svg>
+                </a>
+
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="position-relative h-100 p-4 rounded-5 border border-1"
+                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
+                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
+                    Growth<br>Marketing
+                </h2>
+                <p class="mb-5" style="color:#e6eeff;">A data-driven growth solution with rapid iteration cycles. Build, measure, and learn for continuous optimization and sustainable results.</p>
+                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
+                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
+                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12h16"/>
+                        <path d="M13 6l7 6-7 6"/>
+                        </g>
+                    </svg>
+                </a>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="position-relative h-100 p-4 rounded-5 border border-1"
+                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
+                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
+                    Narrative<br>Marketing
+                </h2>
+                <p class="mb-5" style="color:#e6eeff;">Create emotional connections through authentic storytelling, enhance brand recall, and differentiate your business from competitors.</p>
+                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
+                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
+                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12h16"/>
+                        <path d="M13 6l7 6-7 6"/>
+                        </g>
+                    </svg>
+                </a>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="position-relative h-100 p-4 rounded-5 border border-1"
+                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
+                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
+                    Intellectual<br>Property
+                </h2>
+                <p class="mb-5" style="color:#e6eeff;">Develop original campaign ideas and creative concepts that strengthen brand identity and position your brand as a thought leader.</p>
+                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
+                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
+                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12h16"/>
+                        <path d="M13 6l7 6-7 6"/>
+                        </g>
+                    </svg>
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="client" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <p class="display-4">Our Happy Client</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: -100px;">
+                <div class="logo-slider py-3">
+                <!-- Track berisi 2x kumpulan logo yang sama (untuk loop mulus) -->
+                <div class="logo-track">
+
+                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/3.png" style="height: 20rem; width: 30rem;" alt="Brand E"></a>
+                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/4.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
+                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/5.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
+                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/3.png" style="height: 20rem; width: 30rem;" alt="Brand E"></a>
+                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/4.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
+                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/5.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
+
+
+                </div>
+                </div>
+            </div>
+
+
+            <div class="row" style="margin-top: -90px;">
+                <div class="text-center">
+                    <p class="text-danger">(this part is an example. And will be a slideshow of brands)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section id="" class="py-0 bg-light" style="background-image: url(../landing/img/FOTO/gradient.png); color: white;">
+        <div class="container">
+            <div class="row" >
+                <h1 class="display-1"style="margin-top:5rem;">Discuss your growth plan!</h1>
+                <p>We’ll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <img class="img-fluid" src="../landing/img/LOGO/PNG/elden png white_1.png"/>
+                </div>
+                <div class="col-lg-9">
+                    <div class="">
+                        <div class="">
+                            <img class="" src="../landing/img/ICONS/6.png" style="height: 120px; width: auto;"/>
+                            <img class="" src="../landing/img/ICONS/7.png" style="height: 120px; width: auto;"/>
+                            <img class="" src="../landing/img/ICONS/8.png" style="height: 120px; width: auto;"/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section class="cta-hero d-flex align-items-start align-items-lg-center">
+    <div class="container py-5 pb-hero-bottom position-relative">
+        <!-- Headline & subcopy -->
+        <div class="row">
+        <div class="col-12 col-lg-10">
+            <h1 class="cta-title mb-2 text-start text-lg-start">Discuss your growth plan!</h1>
+            <p class="cta-sub mb-0 text-start">
+            We’ll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results.
+            </p>
+        </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="cta-bottom">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between gap-3" style="margin-bottom: -10rem;">
+            <!-- Brand logo lebih besar -->
+            <div class="d-flex align-items-center gap-2" >
+                <img src="../landing/img/logo/PNG/elden png white_1.png" alt="Elden" style="height:200px; " loading="lazy">
+            </div>
+
+            <!-- Sosmed kanan (PNG) -->
+            <div class="d-flex align-items-center gap-3">
+                <a class="icon-ring" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <img class="icon-img" src="../landing/img/ICONS/6.png" alt="WhatsApp" loading="lazy">
+                </a>
+                <a class="icon-ring" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                <img class="icon-img" src="../landing/img/ICONS/7.png" alt="Instagram" loading="lazy">
+                </a>
+                <a class="icon-ring" href="mailto:hello@elden.id" aria-label="Email">
+                <img class="icon-img" src="../landing/img/ICONS/8.png" alt="Email" loading="lazy">
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+    <section id="" class="footer py-5" style="margin-top: -10rem;">
+        <div class="container" style="margin-top: 10rem;">
+
+            <div class="text-center">
+                <img class="img-fluid" src="../landing/img/LOGO/PNG/elden png white_1.png" style="width: 200px;"/>
+            </div>
+
+            <div class="text-center">
+                <div class="" style="margin-bottom: -2rem; margin-right: 11rem;">
+                    <p style="font-size: 20px;">One and Only</p>
+                </div>
+                <div>
+
+                    <p class="display-1">Network</p>
+                </div>
+
+                <div class="" style="margin-top: -2.5rem; margin-left: 10rem;">
+
+                    <p style="font-size: 20px">you’ll ever need </p>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <p class="">Elden is a strategic partner for businesses that want to grow fast, connect with audiences on an emotional level, and maximize the potential of digital content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- WhatsApp Bubble -->
+    <div class="whatsapp-bubble" onclick="window.location.href='https://wa.me/1234567890'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn">
+        <img src="" alt="Back to Top">
+    </button>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    
+    <script>
+        // Dark mode toggle
+        document.getElementById('toggleDarkMode').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Back to top button visibility
+        window.onscroll = function () {
+            var backToTopBtn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        // Back to top button functionality
+        document.getElementById("backToTopBtn").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <script>
+        new Splide( '.splide', {
+            type    : 'loop',
+            autoplay: 'pause',
+            perPage : 3,
+            } );
+    </script>
+
+</body>
+
+</html>

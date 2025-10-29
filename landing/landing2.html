@@ -26,223 +26,201 @@
             font-family: "The Seasons";
         }
 
-        /* Hero */
-        /* .hero {
-            min-height: 85vh;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-        } */
-
-
-        .hero {
-
-            --dim: .65;
-            background:
-                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
-                url('../landing/img/FOTO/hero.png') center/cover no-repeat;
-            color: #fff;
-            /* background-size: cover; */
+            .hero-section {
+            /* Menggunakan gambar latar belakang grafik data yang gelap */
+            /* Placeholder dari Unsplash */
+            background-image: linear-gradient(rgba(5, 5, 10, 0.9), rgba(5, 5, 10, 0.9)), 
+                              url('../landing/img/FOTO/hero.png');
+            background-size: cover;
             background-position: center;
-
-            height: 100vh; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             
-        }
-
-        .nowrap-1 {
-            white-space: nowrap;        /* jangan pindah baris */
-            overflow: hidden;           /* sembunyikan sisa */
-            text-overflow: ellipsis;    /* tampilkan … */
-            max-width: 100%;            /* biar responsif */
-            display: inline-block;      /* atau block/flex item */
-            }
-
-
-        .nowrap-lg {
-            white-space: normal;        /* default: boleh wrap */
-            }
-            @media (min-width: 992px){     /* ≥ lg (Bootstrap style) */
-            .nowrap-lg { white-space: nowrap; }
-            }    
-                                
-
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #121212;
+            padding: 8rem 0;
+            position: relative;
             color: white;
-        }
-
-        .dark-mode .navbar,
-        .dark-mode .card {
-            background-color: #333;
-            color: white;
-        }
-
-        .dark-mode .btn,
-        .dark-mode .btn-outline-light {
-            color: white;
-            border-color: white;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 50%;
-            padding: 10px;
-            font-size: 20px;
-            display: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .back-to-top img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .whatsapp-bubble {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-        }
-
-        .whatsapp-bubble img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .whatsapp-bubble:hover {
-            background-color: #128C7E;
-        }
-
-
-
-        /* section footer */
-        .footer{
-            --dim: .65;
-
-            background:
-                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
-                url('../landing/img/FOTO/hero.png') center/cover no-repeat;
-            color: #fff;
-            height: 40vh; 
-        }
-        /* end section footer */
-
-
-        /* .feature-card{
-        border:1px solid rgba(0,0,0,.60);
-        border-radius:1.25rem;  
-        padding:1.5rem;
-        height:100%;
-        background:#fff;
-        }
-        .feature-icon{
-        width:56px; height:56px; flex:0 0 auto;
-        }
-        .feature-title{
-        font-weight:600; 
-        font-size:1.25rem;
-        line-height:1.2;
-        margin-bottom:.25rem;
-        }
-        .feature-desc{
-        color:#666; font-size:.95rem;
-        }
- 
-        .features-wrap{ row-gap:1.25rem }         */
-
-                /* Gaya Kustom untuk Meniru Desain Gambar */
-        .custom-card {
-            border: 1px solid #3b3939;
-            border-radius: 45px; 
-            padding: 30px;
-            text-align: left;
-            min-height: 250px; 
-            margin-bottom: 20px; 
-            
-            /* Menggunakan Flexbox */
-            display: flex;
-            align-items: flex-start; 
-            justify-content: space-between; 
-        }
-
-        .text-content {
-            flex-grow: 1; 
-            padding-right: 20px; 
-            margin-top: 65px;
-        }
-
-        .icon-container {
-            /* Margin negatif untuk mengangkat ikon */
-            margin-top: -15px;
-            margin-right: -65px; 
-            flex-shrink: 0; 
-            
-            /* Hapus properti font-size karena sekarang pakai img */
-            /* font-size: 50px; */ 
-            /* color: #000; */
-            
-            /* Atur dimensi kontainer ikon agar gambar memiliki ruang */
-            width: 200px; /* Sesuaikan lebar sesuai gambar PNG Anda */
-            height: 50px; /* Sesuaikan tinggi sesuai gambar PNG Anda */
-            
-            /* Jika gambar folder bertumpuk, styling khusus ini tidak berlaku */
-            position: relative; 
-        }
-
-        /* Styling khusus untuk ikon folder bertumpuk tidak lagi relevan */
-        /* .folder-icon-stack, .folder-icon-stack.back, dst. */
-
-        /* CSS untuk Gambar PNG di dalam icon-container */
-        .icon-container img {
-            max-width: 100%; /* Memastikan gambar tidak keluar dari container */
-            height: auto;   /* Menjaga rasio aspek gambar */
-            display: block; /* Menghilangkan spasi ekstra di bawah gambar */
-
-            /* Jika Anda ingin kontrol ukuran yang lebih spesifik, gunakan width/height */
-            /* width: 50px; */ 
-            /* height: 50px; */
-        }
-        .img-icon {
-            width: 300px;
         }
         
-        .card-title-custom {
-            font-size: 1.5rem; 
-            font-weight: bold;
-            line-height: 1.2;
-            margin-bottom: 5px; 
-            color: #333;
+        /* Teks "We design" */
+        .hero-pretitle {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
         }
 
-        .card-text-custom {
-            font-size: 0.95rem; 
+        /* Judul utama "Authentic Content..." */
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 7vw, 5.5rem); /* Ukuran font responsif */
+            font-weight: 600; /* Sedikit tebal */
+            line-height: 1.15;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Subjudul "that turn viewers..." */
+        .hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            color: var(--color-text-secondary);
+            font-weight: 300; /* Tipis */
+            max-width: 600px; /* Batasi lebar agar tidak terlalu panjang */
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        /* Bagian Hero (Tumbuhan) */
+        .tumbuhan-section {
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        .tumbuhan-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-top-left-radius: 10rem;
+            border-bottom-left-radius: 10rem;
+        }
+
+        .tumbuhan-text {
+            padding: 2rem 3rem;
+        }
+
+        /* Bagian Kartu Fitur */
+        .features-section {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        /* === PERUBAHAN CSS DIMULAI DI SINI === */
+
+        .feature-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 1.5rem;
+            padding: 2.5rem; /* Padding internal yang besar */
+            height: 100%; /* Membuat semua kartu sama tinggi */
+            background-color: #fff;
+            transition: all 0.3s ease;
+
+            /* Menggunakan Flexbox untuk tata letak internal:
+              1. Arahkan secara vertikal (column)
+              2. Beri jarak (space-between) untuk mendorong ikon ke atas
+                 dan teks ke bawah.
+            */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            /* Menetapkan tinggi minimum agar tata letak berfungsi 
+              bahkan jika kontennya sangat sedikit.
+            */
+            min-height: 220px; 
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            /* Mendorong ikon ini ke kanan di dalam flex container */
+            align-self: flex-end;
+            margin-bottom: 1rem; /* Memberi jarak jika teks terlalu panjang */
+        }
+
+        /* Div baru untuk membungkus teks */
+        .feature-text {
+            /* Mendorong blok teks ini ke kiri (default, tapi eksplisit) */
+            align-self: flex-start;
+        }
+
+        .feature-text h5 {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
             color: #555;
-            line-height: 1.4;
-            margin-bottom: 0; 
+            margin-bottom: 0;
+        }
+        
+        /* === PERUBAHAN CSS SELESAI DI SINI === */
+
+
+        /* Penyesuaian untuk teks intro */
+        .intro-text h3 {
+            font-weight: 300;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* === CTA Footer Section === */
+        .cta-footer {
+            /* Latar belakang gelap bertekstur */
+            background-image: linear-gradient(rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.9)), 
+                              url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto-format&fit=crop');
+            background-color: var(--color-bg-dark);
+            background-size: cover;
+            background-position: center;
+            
+            padding: 7rem 0; 
+            color: var(--color-text-primary);
+            position: relative;
+            text-align: center;
+            /* overflow: hidden; */ /* Dihapus agar tidak memotong shadow */
+        }
+        
+        /* Judul "Want a Strategy..." */
+        .cta-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 5vw, 2.75rem); 
+            font-weight: 500;
+            color: var(--color-text-primary);
+            margin-bottom: 2rem; 
+            
+            /* === PERUBAHAN UTAMA DI SINI === */
+            white-space: normal; /* Default: biarkan teks 'wrap' (turun baris) */
+        }
+
+        /* * Media Query untuk layar besar (Desktop)
+         * 992px adalah breakpoint 'lg' di Bootstrap
+        */
+        @media (min-width: 992px) {
+            .cta-title {
+                white-space: nowrap; /* Paksa satu baris HANYA di layar besar */
+            }
         }
 
 
+        /* Tombol "Consult Now!" */
+        .btn-consult {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--color-text-primary);
+            background-color: transparent;
+            border: 2px solid var(--color-text-primary);
+            border-radius: 50px; 
+            padding: 0.75rem 2.5rem; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Efek Hover */
+        .btn-consult:hover {
+            color: var(--color-bg-dark);
+            background-color: var(--color-text-primary);
+        }    
     </style>
 </head>
 
@@ -278,251 +256,150 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- <div>
-            <h1>Welcome to Our Landing Page</h1>
-            <p>Explore our amazing services and features. Stay connected with us!</p>
-        </div> -->
+   
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9 text-center">
+                    
+                    <p class="hero-pretitle">We design</p>
+                    
+                    <h1 class="hero-title">
+                        Authentic Content and<br>
+                        Precision Ad Strategies
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        that turn viewers into loyal customers for D2C brands.
+                    </p>
 
-        <div class="row">
-            <div class="col-lg-12 ">
-                <div class="text-center" wi>
-                    <div class="" style="font-size: 30px;"> We design </div>
-                    <div class="" style="font-size: 80px;">Authentic Content and</div>
-                    <div class="" style="font-size: 80px;">Precision Ad Strategies</div>
-                    <div class="" style="font-size: 30px;"> that turn viewers into loyal customers for D2C brands.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="connect" class="py-5">
-        <!-- <div class="container">
-
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <div class="container">
-                        <div class="d-flex justify-content-end">
-                            <div class="col-lg-9">
-                                    <p class="text-end">
-                                        <strong>At Elden, we believe growth shouldn’t rely on intuition alone.</strong>
-                                        
-                                        With a data-driven approach, every campaign decision is guided by 
+        <section class="tumbuhan-section my-5">
+            <div class="container-fluid">
+                <div class="row g-0 align-items-center">
+                    
+                    <div class="col-lg-6">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-10 col-lg-12 intro-text">
+                                    <h3>At Elden, we believe growth shouldn't rely on intuition alone.</h3>
+                                    <p>
+                                        With a data-driven approach, every campaign decision is guided by
                                         key metrics like CAC, LTV, and conversion rate.
                                     </p>
-                                    <p class="text-end">
-                                        Supported by A/B testing, paid advertising, and automation, 
-                                        this strategy drives fast and efficient growth. Through the build-measure-learn cycle,
-                                        every process is evaluated and improved without wasting time 
-                                        or resources ensures an effective solution that fuels your business growth.
-                                    </p>   
+                                    <p>
+                                        Supported by A/B testing, paid advertising, and automation, this
+                                        strategy drives fast and efficient growth. Through the build-measure-
+                                        learn cycle, every process is evaluated and improved without wasting
+                                        time or resources ensures an effective solution that fuels your
+                                        business growth.
+                                    </p>
+                                </div>
                             </div>
                         </div>
- 
                     </div>
 
-                </div>
-                <div class="col-lg-6">
-                    <img src="../landing/img/FOTO/13.png" class="img-fluid" style="border-radius: 100px 0px 0px 100px;" />
+                    <div class="col-lg-6 p-0">
+                        <img src="../landing/img/FOTO/13.png" 
+                            alt="Seedling growing" 
+                            class="tumbuhan-image">
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-                <div class="row features-wrap justify-content-center">
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        
-                        <div class="feature-card d-flex gap-3">
-                            <div>
-                                <div class="feature-title">Data-Driven Focus</div>
-                                <div class="feature-desc">Every decision is based on real data, not assumptions.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="feature-card d-flex gap-3">
-                            <div>
-                                <div class="feature-title">Measured ROI</div>
-                                <div class="feature-desc">Budget is allocated only to the best-performing channels.</div>
-                            </div>
-                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="feature-card d-flex gap-3">
-                            <div>
-                                <div class="feature-title">Cross-Functional Team</div>
-                                <div class="feature-desc">Marketing, product, and technical teams work as one unit.</div>
-                            </div>
-                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="feature-card d-flex gap-3">
-                            <div>
-                                <div class="feature-title">Fast Scalability</div>
-                                <div class="feature-desc">A/B testing, automation, and paid ads deliver instant results.</div>
-                            </div>
-                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="feature-card d-flex gap-3">
-                            <div>
-                                <div class="feature-title">Continuous Iteration</div>
-                                <div class="feature-desc">The build-measure-learn cycle that keeps evolving.</div>
-                            </div>
-                            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                
-
-                </div>
-        </div> -->
-
-
+        <section class="features-section">
             <div class="container">
-        <div class="row justify-content-center">
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="custom-card">
-                    <div class="text-content">
-                        <h3 class="card-title-custom">
-                            Data-Driven Focus
-                        </h3>
-                        <p class="card-text-custom">
-                            Every decision is based on real data, not assumptions.
-                        </p>
+                <div class="row justify-content-center g-4">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1055/1055644.png" alt="Data Icon" class="feature-icon">
+                            <div class="feature-text">
+                                <h5>Data Driven Focus</h5>
+                                <p>Every decision is based on real data, not assumptions.</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="icon-container">
-                        <img src="../landing/img/ICONS/9.png" alt="Data-Driven Focus Icon">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1322/1322232.png" alt="ROI Icon" class="feature-icon">
+                            <div class="feature-text">
+                                <h5>Measured ROI</h5>
+                                <p>Budget is allocated only to the best-performing channels.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <img src="https://cdn-icons-png.flaticon.com/128/921/921347.png" alt="Team Icon" class="feature-icon">
+                            <div class="feature-text">
+                                <h5>Cross-Functional Team</h5>
+                                <p>Marketing, product, and technical teams work as one unit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1055/1055652.png" alt="Scales Icon" class="feature-icon">
+                            <div class="feature-text">
+                                <h5>Fast Scalability</h5>
+                                <p>A/B testing, automation, and paid ads deliver instant results.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1055/1055663.png" alt="Iteration Icon" class="feature-icon">
+                            <div class="feature-text">
+                                <h5>Continuous Iteration</h5>
+                                <p>The build-measure-learn cycle that keeps evolving.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-footer">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        
+                        <h2 class="cta-title">
+                            Want a Strategy That Truly Drives Growth?
+                        </h2>
+                        
+                        <a href="#" class="btn-consult">
+                            Consult Now!
+                        </a>
+
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="custom-card">
-                    <div class="text-content">
-                        <h3 class="card-title-custom">
-                            Measured ROI
-                        </h3>
-                        <p class="card-text-custom">
-                            Budget is allocated only to the best-performing channels.
-                        </p>
-                    </div>
-                    
-                    <div class="icon-container">
-                        <img src="../landing/img/ICONS/10.png" alt="Measured ROI Icon">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="custom-card">
-                    <div class="text-content">
-                        <h3 class="card-title-custom">
-                            Cross-Functional Team
-                        </h3>
-                        <p class="card-text-custom">
-                            Marketing, product, and technical teams work as one unit.
-                        </p>
-                    </div>
-                    
-                    <div class="icon-container">
-                        <img src="../landing/img/ICONS/11.png" alt="Cross-Functional Team Icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="custom-card">
-                    <div class="text-content">
-                        <h3 class="card-title-custom">
-                            Fast Scalability
-                        </h3>
-                        <p class="card-text-custom">
-                            A/B testing, automation, and paid ads deliver instant results.
-                        </p>
-                    </div>
-                    
-                    <div class="icon-container">
-                        <img src="../landing/img/ICONS/12.png" alt="Fast Scalability Icon">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="custom-card">
-                    <div class="text-content">
-                        <h3 class="card-title-custom">
-                            Continuous Iteration
-                        </h3>
-                        <p class="card-text-custom">
-                            The build-measure-learn cycle that keeps evolving.
-                        </p>
-                    </div>
-                    
-                    <div class="icon-container">
-                        <img src="../landing/img/ICONS/13.png" alt="Continuous Iteration Icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </section>
-
-
-
-    <section id="" class="footer" style="margin-top: 0rem;">
-        <div class="container" style="margin-top: 0rem;">
-            <div class="row">
-                <div class="text-center" style="margin-top: 7rem;">
-                    <p class="display-5">Want a Strategy That Truly Drives Growth?</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="text-center">
-                    <button class="btn btn-outline-light">Consult Now</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
 
 
 
     <!-- WhatsApp Bubble -->
-    <div class="whatsapp-bubble" onclick="window.location.href='https://wa.me/1234567890'">
+    <!-- <div class="whatsapp-bubble" onclick="window.location.href='https://wa.me/1234567890'">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </div>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTopBtn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Arrow_up_font_awesome.svg/1200px-Arrow_up_font_awesome.svg.png" alt="Back to Top">
-    </button>
+    </button> -->
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

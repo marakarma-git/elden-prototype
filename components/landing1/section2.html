@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Section</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link href="https://db.onlinewebfonts.com/c/9366bd460113d8bf675fd2bdfe1ce764?family=The+Seasons" rel="stylesheet">
+
+    <style>
+        /* CSS yang sudah ada... */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow-x: hidden; /* Mencegah horizontal scroll */
+        }
+
+        .font-serif {
+            font-family: "The Seasons", "Playfair Display", serif;
+        }
+        .connect-subtitle {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+        .connect-title {
+            line-height: 1;
+        }
+        .project-card {
+            border: 0;
+            background: transparent;
+            margin-bottom: 1.5rem;
+        }
+        .project-card .image-wrap {
+            position: relative;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,.08);
+            aspect-ratio: 3 / 4;
+        }
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .project-card .image-wrap:hover img {
+            transform: scale(1.05);
+        }
+        .btn-fab {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.3); 
+            color: #333;
+            backdrop-filter: blur(4px);
+            transition: all .2s ease;
+            z-index: 2;
+        }
+        .btn-fab:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.1);
+            color: #000;
+        }
+        .project-card .card-body {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .project-card .card-title {
+            margin-bottom: .25rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        .project-card .card-subtitle {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+        
+        /* == Bagian Metrik (Angka) == */
+        .metric-number {
+            font-size: clamp(4.5rem, 12vw, 9rem);
+            line-height: .9;
+            font-weight: 400;
+        }
+        .metric-plus {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            letter-spacing: .2rem;
+            line-height: 1;
+            margin-bottom: .25rem;
+        }
+        .metric-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            line-height: 1.1;
+            margin: 0;
+        }
+        
+        /* == Perubahan CSS untuk Full Bleed == */
+        .pill-img {
+            height: 180px;
+            overflow: hidden;
+            width: 100%;
+        }
+        .pill-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        
+        /* Radius untuk gambar di KANAN (sisi kiri membulat) */
+        .pill-img-bleed-right {
+             border-radius: 999px 0 0 999px;
+        }
+        
+        /* Radius untuk gambar di KIRI (sisi kanan membulat) */
+        .pill-img-bleed-left {
+             border-radius: 0 999px 999px 0;
+        }
+        
+        /* Penyesuaian responsif */
+        @media (max-width: 991.98px) {
+            /* Di mobile, gambar jadi full-width tanpa radius */
+            .pill-img-bleed-right,
+            .pill-img-bleed-left {
+                border-radius: 0; 
+                height: 250px; /* Buat lebih tinggi di mobile */
+            }
+            .metric-row {
+                 text-align: center;
+            }
+            /* Beri padding agar teks angka tidak menempel di pinggir */
+            .metric-flex {
+                justify-content: center !important;
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="connect" class="py-5">
+        
+        <div class="container">
+            <div class="text-center mb-3">
+                <p class="connect-subtitle font-serif">We connect</p>
+                <h2 class="connect-title display-1 font-serif">Company and People</h2>
+            </div>
+            <div class="text-center mb-5">
+                <p>We’ve successfully helped these brands grow their business.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="image-wrap">
+                            <img src="../../landing/img/FOTO/4.png" alt="Amanaia Restaurant">
+                            <a href="#" class="btn-fab" aria-label="Lihat Amanaia">
+                                <i class="bi bi-arrow-right fs-5"></i>
+                            </a>
+                        </div>
+                        <div class="card-body pt-3">
+                            <h5 class="card-title font-serif">Amanaia</h5>
+                            <div class="card-subtitle">Food and Beverages</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="image-wrap">
+                            <img src="../../landing/img/FOTO/4.png" alt="Marbella Place Hotel">
+                            <a href="#" class="btn-fab" aria-label="Lihat Marbella Place">
+                                <i class="bi bi-arrow-right fs-5"></i>
+                            </a>
+                        </div>
+                        <div class="card-body pt-3">
+                            <h5 class="card-title font-serif">Marbella Place</h5>
+                            <div class="card-subtitle">Hotel and Travel</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card">
+                        <div class="image-wrap">
+                            <img src="../../landing/img/FOTO/4.png" alt="Polytron Electric Vehicle">
+                            <a href="#" class="btn-fab" aria-label="Lihat Polytron">
+                                <i class="bi bi-arrow-right fs-5"></i>
+                            </a>
+                        </div>
+                        <div class="card-body pt-3">
+                            <h5 class="card-title font-serif">Polytron</h5>
+                            <div class="card-subtitle">Technology</div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        <div class="container">
+            <div class="text-center my-5">
+                <p>and the others for more than:</p>
+            </div>
+        </div> <div class="row align-items-center g-0 metric-row">
+            <div class="col-lg-1 d-none d-lg-block"></div> <div class="col-lg-5"> 
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-end metric-flex">
+                    <div class="col-auto">
+                        <div class="metric-number font-serif counter" data-target="65">0</div>
+                    </div>
+                    <div class="col-auto ps-3">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="metric-plus font-serif">++</div>
+                            <p class="metric-text font-serif mb-0">Project<br>Finished</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="pill-img pill-img-bleed-right">
+                    <img src="../../landing/img/FOTO/13.png" alt="Food platter">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+             <div class="text-center my-4">
+                <p>and</p>
+            </div>
+        </div> <div class="row align-items-center g-0 metric-row">
+            <div class="col-lg-6 order-lg-1">
+                <div class="pill-img pill-img-bleed-left">
+                    <img src="../../landing/img/FOTO/13.png" alt="Cafe interior">
+                </div>
+            </div>
+            
+            <div class="col-lg-5 order-lg-2">
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start metric-flex">
+                    <div class="col-auto">
+                        <div class="metric-number font-serif counter" data-target="31">0</div>
+                    </div>
+                    <div class="col-auto ps-3">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="metric-plus font-serif">++</div>
+                            <p class="metric-text font-serif mb-0">Brand<br>Partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 order-lg-3 d-none d-lg-block"></div> </div>
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            function animateCounter(el, duration = 2000) {
+                const target = +el.dataset.target;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    
+                    const currentValue = Math.floor(progress * target);
+                    el.textContent = currentValue; 
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        el.textContent = target; 
+                    }
+                }
+                requestAnimationFrame(update);
+            }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        animateCounter(el, 1500);
+                        observer.unobserve(el);
+                    }
+                });
+            }, observerOptions);
+
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,778 +1,1211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Elden Creative Network</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elden Creative Network</title>
 
-    <!-- Link ke Google Font "The Seasons" -->
-    <link href="https://db.onlinewebfonts.com/c/9366bd460113d8bf675fd2bdfe1ce764?family=The+Seasons" rel="stylesheet">
+  <!-- Link ke Google Font "The Seasons" -->
+  <link href="https://db.onlinewebfonts.com/c/9366bd460113d8bf675fd2bdfe1ce764?family=The+Seasons" rel="stylesheet" />
 
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet"> -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    
-    
-    <!-- Custom CSS -->
-    <style>
-        /* Smooth scroll untuk seluruh halaman */
-        html {
-            scroll-behavior: smooth;
+  <!-- Custom CSS -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "The Seasons";
+
+    }
+
+    /* Impor Font Kustom "The Seasons" */
+    /* @font-face {
+            font-family: 'The Seasons';
+            src: url('fonts/TheSeasons-Regular.woff2') format('woff2'),
+                 url('fonts/TheSeasons-Regular.woff') format('woff');
+            font-weight: 500; 
+            font-style: normal;
         }
 
-        /* Spasi agar konten tidak tertutup navbar fixed */
-        body {
-            padding-top: 4.5rem;
-            font-family: "The Seasons";
-            
-            
-        }
-
-        /* Hero */
-        /* .hero {
-            min-height: 85vh;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        :root {
+            --font-serif: 'The Seasons', serif;
+            --font-sans: 'Inter', sans-serif;
+            --color-bg-dark: #02040a; 
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #a0a0a0;
         } */
 
+    /* body {
+            background-color: var(--color-bg-dark);
+        } */
 
-        .hero {
-            --dim: .65;
-            background:
-                linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
-                url('../landing/img/FOTO/hero.png') center/cover no-repeat;
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-       
-        }
+    /* === Hero Section === */
+    .hero-section {
+      min-height: 100vh;
+      width: 100%;
+      color: var(--color-text-primary);
+      position: relative;
 
-           
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: white;
-        }
+      --dim: 0.65;
+      background: linear-gradient(rgba(0, 0, 0, var(--dim)),
+          rgba(0, 0, 0, var(--dim))),
+        url("../landing/img/FOTO/hero.png") center/cover no-repeat;
+      color: #fff;
+      /* height: 100vh; */
 
-        .dark-mode .navbar,
-        .dark-mode .card {
-            background-color: #333;
-            color: white;
-        }
+      /* background-image: 
+                linear-gradient(rgba(2, 4, 10, 0.5), rgba(2, 4, 10, 0.5)),
+                url('https://images.pexels.com/photos/1809605/pexels-photo-1809605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                url('https://images.unsplash.com/photo-1504333638930-c8787321e06e?q=80&w=2070&auto=format&fit=crop');
+            
+            background-size: cover, cover, cover;
+            background-position: center, center, center;
+            background-blend-mode: overlay, screen; */
 
-        .dark-mode .btn,
-        .dark-mode .btn-outline-light {
-            color: white;
-            border-color: white;
-        }
+      display: flex;
+      flex-direction: column;
+    }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 50%;
-            padding: 10px;
-            font-size: 20px;
-            display: none;
-            border: none;
-            cursor: pointer;
-        }
+    /* 1. Logo di Atas */
+    .hero-logo {
+      
+      /* Styling font-family, font-weight, dll. dihapus */
+      padding: 2.5rem 0;
+      /* Jarak dari atas tetap ada */
+    }
 
-        .back-to-top img {
-            width: 30px;
-            height: 30px;
-        }
+    /* 2. Konten Utama di Tengah */
+    .hero-content {
+      flex-grow: 1;
+    }
 
-        .whatsapp-bubble {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-        }
+    .hero-pretitle {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+    }
 
-        .whatsapp-bubble img {
-            width: 40px;
-            height: 40px;
-        }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 9vw, 6.5rem);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--color-text-primary);
+    }
 
-        .whatsapp-bubble:hover {
-            background-color: #128C7E;
-        }
+    /* 3. Footer Teks di Bawah */
+    .hero-footer-text {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
 
+    .font-serif {
+      font-family: "The Seasons", "Playfair Display", serif;
+    }
 
+    .connect-subtitle {
+      font-size: 1.25rem;
+      color: #6c757d;
+    }
 
-        /* section footer */
-        .footer{
-        --dim: .70;
-        background:
-            linear-gradient(rgba(0,0,0,var(--dim)), rgba(0,0,0,var(--dim))),
-            url('../landing/img/FOTO/hero.png') center/cover no-repeat;
-        /* background-size: cover; */
-        color: #fff;
-        }
-        /* end section footer */
+    .connect-title {
+      line-height: 1;
+    }
 
-
-        /* card  */
     .project-card {
       border: 0;
       background: transparent;
+      margin-bottom: 1.5rem;
     }
+
     .project-card .image-wrap {
       position: relative;
-      border-radius: 1.25rem;         /* sudut membulat seperti contoh */
-      overflow: hidden;               /* penting agar foto dan tombol ikut membulat */
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      aspect-ratio: 3 / 4;
     }
+
     .project-card img {
       width: 100%;
-      height: 564px;                  /* atur tinggi sesuai kebutuhan */
-      object-fit: cover;              /* foto memenuhi area */
+      height: 100%;
+      object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
     }
-    /* tombol bulat di kanan-bawah foto */
+
+    .project-card .image-wrap:hover img {
+      transform: scale(1.05);
+    }
+
     .btn-fab {
       position: absolute;
-      right: .75rem;
-      bottom: .75rem;
-      width: 44px;
-      height: 44px;
+      right: 1rem;
+      bottom: 1rem;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid #fff;
-      background: rgba(0,0,0,.35);
-      color: #fff;
-      backdrop-filter: blur(2px);
-      transition: transform .2s ease, background .2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.3);
+      color: #333;
+      backdrop-filter: blur(4px);
+      transition: all 0.2s ease;
+      z-index: 2;
     }
-    .btn-fab:hover { 
-      transform: translateY(-2px); 
-      background: rgba(0,0,0,.55);
-      color: #fff;
+
+    .btn-fab:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: scale(1.1);
+      color: #000;
     }
+
+    .project-card .card-body {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
     .project-card .card-title {
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
       font-weight: 600;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
+
     .project-card .card-subtitle {
       color: #6c757d;
-      font-size: .95rem;
-    }
-     /* end card */
-
-
-/* wee connect */
-
-    .metric-number{
-      font-size: clamp(3.5rem, 10vw, 6.5rem);
-      line-height:.9; font-weight:400;
-    }
-    .metric-plus{
-      font-size: clamp(1rem, 2.2vw, 3.4rem);
-      letter-spacing:.25rem; line-height:1; margin-bottom:.25rem;
-    }
-    .metric-text{
-      font-size: clamp(1rem, 2.4vw, 1.5rem);
-      line-height:1.05; margin:0;
-    }
-    .pill-img{ height:140px; 
-        /* border-radius:9999px;  */
-        overflow:hidden; 
-    }
-    .pill-img img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
-    @media (min-width: 992px){ .pill-img{ height:180px; } }
-
-/* end we connect */
-
-
-  /* Section hero */
-
-   .cta-hero{
-    min-height: 65vh;
-    color: #eef3ff;
-    background:
-      radial-gradient(1000px 600px at 10% -10%, rgba(101,145,214,.35), transparent 60%),
-      radial-gradient(900px 600px at 100% 120%, rgba(15,43,90,.45), transparent 60%),
-      url("../landing/img/FOTO/gradient.png") center/cover no-repeat; /* ganti sesuai aset */
-    position: relative;
-    overflow: hidden;
-  } 
-  .cta-hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(3,9,20,.15), rgba(3,9,20,.35));
-    pointer-events:none;
-  }
-
-  .cta-title{
-    /* font-family: "The Seasons", "Playfair Display", serif; */
-    font-weight: 700;
-    letter-spacing: .2px;
-    line-height: .95;
-    font-size: clamp(2.2rem, 8vw, 5rem);
-  }
-  .cta-sub{
-    color: #c9d6ff;
-    font-size: clamp(.95rem, 1.6vw, 1.05rem);
-    margin-top: .25rem;
-    max-width: 60ch;
-  }
-
-  /* Tambah padding bawah setinggi bar bawah agar konten tak tertutup */
-  .pb-hero-bottom{ padding-bottom: 92px; } /* 92px ~ tinggi bar+jarak */
-
-  /* Bar bawah: logo kiri, sosmed kanan */
-  .cta-bottom{
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    padding: .85rem 0;
-    z-index: 2;
-  }
-
-  /* Ikon PNG di dalam ring */
-  .icon-img{
-    width: 150px; height: 100px;
-    /* object-fit: contain;
-    display: block; */
-  }
-
-  /* Responsif kecil: rapatkan sedikit */
-  @media (max-width: 575.98px){
-    .icon-ring{ width: 40px; height: 40px; }
-    .icon-img{ width: 20px; height: 20px; }
-    .pb-hero-bottom{ padding-bottom: 86px; }
-  }
-
-    /* --- SECTION STYLE (opsional) --- */
-    .clients-section{
-        background: radial-gradient(900px 500px at 10% -10%, #47608f40, transparent 60%),
-                    radial-gradient(900px 500px at 100% 110%, #0b1c3740, transparent 60%),
-                    #0f1a2b;
-        color:#eaf0ff;
-    }
-    .clients-title{
-        font-family: "The Seasons", "Playfair Display", serif;
-        font-weight:700;
-        letter-spacing:.2px;
+      font-size: 1rem;
     }
 
-    /* --- SLIDER CORE --- */
-    .logo-slider{
-        position: relative;
-        overflow: hidden;
-    }
-    .logo-track{
-        display: flex;
-        align-items: center;
-        /* gap: clamp(2rem, 6vw, 0rem); */
-        /* durasi geser (ubah sesuai kebutuhan) */
-        animation: scrollX 22s linear infinite;
-    }
-    /* duplikasi baris agar seamless */
-    .logo-track > .logo-item{ flex: 0 0 auto; }
-
-    /* Ukuran & efek logo */
-    .logo-item img{
-        height: 48px;               /* tinggi logo seragam */
-        width: auto;
-        /* filter: grayscale(100%) brightness(1.2) contrast(1.05); */
-        opacity: .85;
-        transition: filter .25s ease, opacity .25s ease, transform .25s ease;
-    }
-    .logo-item:hover img{
-        filter: grayscale(0%) brightness(1) contrast(1);
-        opacity: 1;
-        transform: translateY(-2px);
+    /* == Bagian Metrik (Angka) == */
+    .metric-number {
+      font-size: clamp(4.5rem, 12vw, 9rem);
+      line-height: 0.9;
+      font-weight: 400;
     }
 
-    /* Pause saat hover area slider */
-    .logo-slider:hover .logo-track{
-        animation-play-state: paused;
+    .metric-plus {
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      letter-spacing: 0.2rem;
+      line-height: 1;
+      margin-bottom: 0.25rem;
     }
 
-    /* Responsif: tinggi logo naik di layar besar */
-    @media (min-width: 992px){
-        .logo-item img{ height: 60px; }
+    .metric-text {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      line-height: 1.1;
+      margin: 0;
     }
 
-    /* Keyframes: geser horizontal */
-    @keyframes scrollX{
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); } /* karena kita duplikasi isi jadi 50% */
+    /* == Perubahan CSS untuk Full Bleed == */
+    .pill-img {
+      height: 180px;
+      overflow: hidden;
+      width: 100%;
     }
 
-    </style>
+    .pill-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Radius untuk gambar di KANAN (sisi kiri membulat) */
+    .pill-img-bleed-right {
+      border-radius: 999px 0 0 999px;
+    }
+
+    /* Radius untuk gambar di KIRI (sisi kanan membulat) */
+    .pill-img-bleed-left {
+      border-radius: 0 999px 999px 0;
+    }
+
+    /* Penyesuaian responsif */
+    @media (max-width: 991.98px) {
+
+      /* Di mobile, gambar jadi full-width tanpa radius */
+      .pill-img-bleed-right,
+      .pill-img-bleed-left {
+        border-radius: 0;
+        height: 250px;
+        /* Buat lebih tinggi di mobile */
+      }
+
+      .metric-row {
+        text-align: center;
+      }
+
+      /* Beri padding agar teks angka tidak menempel di pinggir */
+      .metric-flex {
+        justify-content: center !important;
+        padding: 2rem 0;
+      }
+    }
+
+    .background-section {
+      /* Latar belakang gambar */
+      background-image: url('../landing/img/FOTO/gradient.png');
+      /* GANTI DENGAN URL GAMBAR ANDA */
+      background-size: cover;
+      /* Gambar mencakup seluruh area */
+      background-position: center;
+      /* Gambar di tengah */
+      background-attachment: fixed;
+      /* Gambar tetap saat scroll */
+      min-height: 100vh;
+      /* Memastikan section memiliki tinggi minimal 100% viewport */
+      display: flex;
+      /* Untuk memposisikan konten di tengah secara vertikal */
+      align-items: center;
+      /* Memposisikan konten di tengah secara vertikal */
+      justify-content: center;
+      /* Memposisikan konten di tengah secara horizontal */
+      padding-top: 5rem;
+      /* Padding atas dan bawah untuk konten */
+      padding-bottom: 5rem;
+      position: relative;
+      /* Untuk overlay */
+    }
+
+    .background-section::before {
+      /* Overlay gelap untuk membuat teks lebih mudah dibaca */
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* background-color: rgba(0, 0, 0, 0.7);  */
+      z-index: 1;
+      /* Di bawah konten utama */
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      /* Memastikan konten di atas overlay */
+    }
+
+    .main-title {
+      /* Menggunakan font "Playfair Display" untuk judul utama */
+      /* font-family: 'Playfair Display', serif; */
+      font-weight: 500;
+      /* Atau 700 jika ingin lebih tebal */
+      font-size: 3.5rem;
+      /* Ukuran font lebih besar */
+      margin-bottom: 3.5rem;
+      /* Jarak bawah yang lebih besar */
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* Efek bayangan pada teks */
+    }
+
+    .service-card {
+      background-color: rgba(72, 70, 70, 0.03);
+      border: 1px solid rgba(244, 242, 242, 0.836);
+      border-radius: 50px;
+      padding: 2rem;
+      height: 100%;
+      position: relative;
+      padding-bottom: 6rem;
+      transition: all 0.3s ease;
+      /* Untuk efek blur (opsional, tergantung keinginan untuk meniru gambar) */
+      backdrop-filter: blur(5px);
+    }
+
+    .service-card:hover {
+      background-color: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      /* Sedikit naik saat hover */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      /* Bayangan saat hover */
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      /* Font sama dengan judul utama */
+      font-weight: 500;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .service-description {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .service-icon {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .service-icon .bi-arrow-right {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 900px;
+      margin-top: 5rem;
+      /* Jarak atas lebih besar dari bagian card */
+    }
+
+    .customer-section {
+      padding-top: 3rem;
+      padding-bottom: rem;
+    }
+
+    .customer-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 2.75rem;
+      color: #222;
+      margin-bottom: 3rem;
+    }
+
+    .example-text {
+      color: #e53e3e;
+      /* Warna merah seperti di gambar */
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Style untuk Splide.js */
+    .splide__slide {
+      /* Memastikan logo berada di tengah slide secara vertikal */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+
+    .splide__slide img {
+      max-height: 300px;
+      /* Atur tinggi maksimal logo Anda */
+      width: auto;
+      max-width: 100%;
+      filter: grayscale(100%);
+      /* Logo dibuat abu-abu */
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    /* Efek hover pada logo */
+    .splide__slide:hover img {
+      filter: grayscale(0%);
+      /* Logo kembali berwarna */
+      opacity: 1;
+      transform: scale(1.05);
+      /* Sedikit membesar */
+    }
+
+    /* Menyembunyikan track Splide saat JS belum dimuat */
+    .splide:not(.is-active) .splide__track {
+      visibility: hidden;
+    }
+
+    .growth-plan-section {
+        /* Ganti 'path/to/background-image.jpg' dengan path gambar Anda 
+          (Contoh: nama file 'image_6dca44.jpg' yang Anda unggah pertama kali)
+        */
+        background-image: url('../../landing/img/FOTO/gradient.png');
+        
+        /* Properti tambahan untuk background image */
+        background-size: cover;       /* Memastikan gambar menutupi seluruh section */
+        background-position: center;  /* Memposisikan gambar di tengah */
+        background-repeat: no-repeat; /* Mencegah gambar berulang */
+        
+        /* Warna fallback (jaga-jaga jika gambar gagal dimuat) */
+        background-color: #1a2035; 
+        
+        color: #ffffff;
+        padding: 6rem 0; /* Memberi padding atas dan bawah yang cukup */
+    }
+
+    .growth-plan-section h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+    }
+
+    .growth-plan-section p {
+        font-family: 'Lato', sans-serif;
+        opacity: 0.9;
+    }
+
+    .elden-logo {
+        height: auto; /* Anda bisa ubah nilainya */
+        width: 150px;
+    }
+
+    .social-icon {
+        height: 120px; /* Anda bisa ubah nilainya */
+        width: 120px;
+        object-fit: cover;
+    }
+
+
+    /* Di layar kecil, hilangkan margin kiri ikon pertama */
+    @media (max-width: 767.98px) {
+      .footer-social-icons a:first-child {
+        margin-left: 0;
+      }
+
+      /* Beri jarak antara ikon dan logo saat menumpuk */
+      .footer-logo {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+
+    /* Mengganti .hero-section menjadi .site-footer */
+    .site-footer {
+      /* Ganti URL ini dengan path ke gambar latar belakang Anda */
+      background-image: url('../landing/img/FOTO/hero.png');
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+
+      /* KETINGGIAN DIATUR DI SINI:
+        Diubah dari 100vh menjadi 90vh (90% tinggi layar).
+        Anda bisa ganti ke nilai lain (misal: 80vh, 700px, dll)
+      */
+      min-height: 50vh;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.70);
+      z-index: 0;
+    }
+
+    .site-footer .container-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      /* KETINGGIAN DIATUR DI SINI:
+        Nilai ini harus sama dengan .site-footer
+      */
+      min-height: 50vh;
+
+      width: 100%;
+      padding-right: var(--bs-gutter-x, 0.75rem);
+      padding-left: var(--bs-gutter-x, 0.75rem);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    /* Atur max-width untuk .container-inner agar sama seperti .container */
+    @media (min-width: 576px) {
+      .site-footer .container-inner {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .site-footer .container-inner {
+        max-width: 720px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .site-footer .container-inner {
+        max-width: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .site-footer .container-inner {
+        max-width: 1140px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .site-footer .container-inner {
+        max-width: 1320px;
+      }
+    }
+
+
+    .footer-logo {
+      height: auto;
+      width: 200px;
+      /* filter: brightness(0) invert(1); */
+    }
+
+    .footer-content-main {
+      flex-grow: 1;
+    }
+
+    .title-main {
+      /* font-family: 'Playfair Display', serif; */
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .title-sub {
+      /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+      font-size: 1.75rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer-caption {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Penyesuaian untuk layar mobile */
+    @media (max-width: 768px) {
+      .title-main {
+        font-size: 4rem;
+      }
+
+      .title-sub {
+        font-size: 1.25rem;
+      }
+
+      .footer-caption {
+        font-size: 0.9rem;
+      }
+    }
+
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .dark-mode .navbar,
+    .dark-mode .card {
+      background-color: #333;
+      color: white;
+    }
+
+    .dark-mode .btn,
+    .dark-mode .btn-outline-light {
+      color: white;
+      border-color: white;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #424344;
+      color: white;
+      border-radius: 100%;
+      padding: 10px;
+      font-size: 20px;
+      display: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .back-to-top img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .whatsapp-bubble {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+    }
+
+    .whatsapp-bubble img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .whatsapp-bubble:hover {
+      background-color: #128C7E;
+    }
+  </style>
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Landing Page</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Landing Page</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#connect">Connect</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#client">Client</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light" id="toggleDarkMode">
+              Toggle Dark Mode
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#connect">Connect</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#service">Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#client">Client</a>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-outline-light" id="toggleDarkMode">Toggle Dark Mode</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+  <section id="section1" class="hero-section">
+    <header class="hero-logo text-center">
+      <img src="../landing/img/LOGO/PNG/elden png white_1.png" alt="Elden Logo" style="height: auto; width: 150px" />
+    </header>
+    <main class="container hero-content d-flex align-items-center justify-content-center">
+      <div class="text-center">
+        <p class="hero-pretitle">Stop making</p>
 
-        <div class="row">
-            <div class="text-center" style="margin-top: -10px;">
-                <img src="../landing/img/LOGO/PNG/elden png white_1.png" style="width: 200px;">
-            </div>
-            <div class="row">
-                <div class="text-center">
-                    <p class="" style="font-size: 30px; line-height: 0;">Stop Making</p>
-                    <p class="" style="font-size: 100px; margin-top: -36px;">Contents</p>
-                    <p class="" style="font-size: 30px; line-height: 0;">Start Making</p>
-                    <p class="" style="font-size: 100px; margin-top: -36px;">Connection</p>
-                </div>
-            </div>
+        <h1 class="hero-title">Contents</h1>
 
-            <div class="row">
-                <div class="text-center">
-                    <p style="font-size: 20px;">Using our growth formula, we turn creativity into conversions. Content & ad strategies designed for maximum ROAS.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <p class="hero-pretitle mt-4">Start making</p>
 
-    <!-- Connect Section -->
-    <section id="connect" class="py-5">
-        <div class="container">
-            <div class="">
-                <p class="display-6">We Connect</p>
-                <p class="display-1">Company and People</p>
-            </div>
+        <h1 class="hero-title">Connection</h1>
+      </div>
+    </main>
 
-            <div class="row text-center">
-                <p>We’ve successfully helped these brands grow their business.</p>
-            </div>
-
-            <div class="row">
-
-            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="image-wrap">
-                    <img src="../landing/img/FOTO/4.png" alt="Amanaisia venue">
-                    <a href="#" class="btn-fab" aria-label="Selengkapnya">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                    </div>
-                    <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
-                    <div class="card-body px-0 pt-3">
-                    <h5 class="card-title mb-0">Amanaia</h5>
-                    <div class="card-subtitle">Food and Beverages</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="image-wrap">
-                    <img src="../landing/img/FOTO/4.png" alt="Amanaisia venue">
-                    <a href="#" class="btn-fab" aria-label="Selengkapnya">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                    </div>
-                    <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
-                    <div class="card-body px-0 pt-3">
-                    <h5 class="card-title mb-0">Amanaia</h5>
-                    <div class="card-subtitle">Food and Beverages</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-11 col-sm-8 col-md-6 col-lg-4">
-                <div class="card project-card">
-                    <div class="image-wrap">
-                    <img src="../landing/img/FOTO/4.png" alt="Amanaisia venue">
-                    <a href="#" class="btn-fab" aria-label="Selengkapnya">
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                    </div>
-                    <div class="px-2"></div> <!-- kecilkan jarak seperti contoh -->
-                    <div class="card-body px-0 pt-3">
-                    <h5 class="card-title mb-0">Amanaia</h5>
-                    <div class="card-subtitle">Food and Beverages</div>
-                    </div>
-                </div>
-            </div>
-
-
-            </div>
-        </div>
-
-        <div class="">
-            <div class="row text-center">
-                <p>and the others for more than:</p>
-            </div>
-
-            <div class="row align-items-center g-4">
-                <div class="col-lg-6">
-                    <div class="d-flex justify-content-end">
-                        <div class="col-auto col-lg-2">
-                            <div class="metric-number">65</div>
-                        </div>
-                        <div class="col-auto col-lg-2">
-                            <div class="d-flex flex-column justify-content-center">
-                            <div class="metric-plus">++</div>
-                            <p class="metric-text mb-0">Project<br>Finished</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="pill-img" style="border-radius: 100px 0px 0px 100px;">
-                    <img src="../landing/img/FOTO/13.png" alt="Sample">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row text-center">
-                <p>and</p>
-            </div>
-
-            <div class="row align-items-center g-4">
-
-                <div class="col-lg-6">
-                    <div class="pill-img" style="border-radius: 0px 100px 100px 0px;">
-                    <img src="../landing/img/FOTO/13.png" alt="Sample">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex justify-content-start">
-                        <div class="col-auto col-lg-2">
-                            <div class="metric-number">31</div>
-                        </div>
-                        <div class="col-auto col-lg-2">
-                            <div class="d-flex flex-column justify-content-center">
-                            <div class="metric-plus">++</div>
-                            <p class="metric-text mb-0">Brand<br>Partners</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <section id="service" class="py-5 text-white" style="background-image:url('../landing/img/FOTO/gradient.png'); background-size:cover; background-position:center;">
-        <div class="container">
-            <div class="text-center mb-4">
-            <p class="display-4 mb-0" style="font-family:'The Seasons','Playfair Display',serif;">What We Do?</p>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-            <!-- CARD 1 -->
-            <div class="col-12 col-md-6 col-lg-5">
-                <div class="position-relative h-100 p-4 rounded-5 border border-1"
-                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
-                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
-                    Content<br>Marketing
-                </h2>
-                <p class="mb-5" style="color:#e6eeff;">Leverage content from creators who already have an audience. Fast, cost-efficient, and effective in increasing engagement organically.</p>
-
-                <!-- panah -->
-                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
-                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
-                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 12h16"/>
-                        <path d="M13 6l7 6-7 6"/>
-                        </g>
-                    </svg>
-                </a>
-
-                </div>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="col-12 col-md-6 col-lg-5">
-                <div class="position-relative h-100 p-4 rounded-5 border border-1"
-                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
-                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
-                    Growth<br>Marketing
-                </h2>
-                <p class="mb-5" style="color:#e6eeff;">A data-driven growth solution with rapid iteration cycles. Build, measure, and learn for continuous optimization and sustainable results.</p>
-                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
-                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
-                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 12h16"/>
-                        <path d="M13 6l7 6-7 6"/>
-                        </g>
-                    </svg>
-                </a>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="col-12 col-md-6 col-lg-5">
-                <div class="position-relative h-100 p-4 rounded-5 border border-1"
-                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
-                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
-                    Narrative<br>Marketing
-                </h2>
-                <p class="mb-5" style="color:#e6eeff;">Create emotional connections through authentic storytelling, enhance brand recall, and differentiate your business from competitors.</p>
-                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
-                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
-                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 12h16"/>
-                        <path d="M13 6l7 6-7 6"/>
-                        </g>
-                    </svg>
-                </a>
-                </div>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="col-12 col-md-6 col-lg-5">
-                <div class="position-relative h-100 p-4 rounded-5 border border-1"
-                    style="border-color:rgba(255,255,255,.35); background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 10px 24px rgba(0,0,0,.25) inset;">
-                <h2 class="mb-2" style="font-family:'The Seasons','Playfair Display',serif; font-weight:700; line-height:1.1;">
-                    Intellectual<br>Property
-                </h2>
-                <p class="mb-5" style="color:#e6eeff;">Develop original campaign ideas and creative concepts that strengthen brand identity and position your brand as a thought leader.</p>
-                <a href="#" class="d-inline-grid place-items-center position-absolute rounded-circle"
-                    style="right:18px; bottom:18px; width:48px; height:48px; border:1px solid rgba(255,255,255,.55); background:rgba(255,255,255,.08); text-decoration:none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" aria-hidden="true" style="height: 47px; margin-left: 11px">
-                        <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 12h16"/>
-                        <path d="M13 6l7 6-7 6"/>
-                        </g>
-                    </svg>
-                </a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="client" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="text-center">
-                    <p class="display-4">Our Happy Client</p>
-                </div>
-            </div>
-            <div class="row" style="margin-top: -100px;">
-                <div class="logo-slider py-3">
-                <!-- Track berisi 2x kumpulan logo yang sama (untuk loop mulus) -->
-                <div class="logo-track">
-
-                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/3.png" style="height: 20rem; width: 30rem;" alt="Brand E"></a>
-                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/4.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
-                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/5.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
-                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/3.png" style="height: 20rem; width: 30rem;" alt="Brand E"></a>
-                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/4.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
-                    <a href="#" class="logo-item" ><img src="../landing/img/ICONS/5.png" style="height: 20rem; width: 30rem;" alt="Brand F"></a>
-
-
-                </div>
-                </div>
-            </div>
-
-
-            <div class="row" style="margin-top: -90px;">
-                <div class="text-center">
-                    <p class="text-danger">(this part is an example. And will be a slideshow of brands)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- <section id="" class="py-0 bg-light" style="background-image: url(../landing/img/FOTO/gradient.png); color: white;">
-        <div class="container">
-            <div class="row" >
-                <h1 class="display-1"style="margin-top:5rem;">Discuss your growth plan!</h1>
-                <p>We’ll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <img class="img-fluid" src="../landing/img/LOGO/PNG/elden png white_1.png"/>
-                </div>
-                <div class="col-lg-9">
-                    <div class="">
-                        <div class="">
-                            <img class="" src="../landing/img/ICONS/6.png" style="height: 120px; width: auto;"/>
-                            <img class="" src="../landing/img/ICONS/7.png" style="height: 120px; width: auto;"/>
-                            <img class="" src="../landing/img/ICONS/8.png" style="height: 120px; width: auto;"/>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
-    <section class="cta-hero d-flex align-items-start align-items-lg-center">
-    <div class="container py-5 pb-hero-bottom position-relative">
-        <!-- Headline & subcopy -->
-        <div class="row">
-        <div class="col-12 col-lg-10">
-            <h1 class="cta-title mb-2 text-start text-lg-start">Discuss your growth plan!</h1>
-            <p class="cta-sub mb-0 text-start">
-            We’ll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results.
+    <footer class="container-fluid p-4 p-md-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 text-center">
+          <div class="hero-footer-text">
+            <p>
+              Using our growth formula, we turn creativity
+              into conversions.
+              Content & ad strategies designed for maximum
+              ROAS.
             </p>
+          </div>
         </div>
+      </div>
+    </footer>
+  </section>
+
+  <section id="connect" class="mb-5">
+    <div class="container">
+      <div class="text-center mb-3">
+        <p class="connect-subtitle font-serif">We connect</p>
+        <h2 class="connect-title display-1 font-serif">Company and
+          People</h2>
+      </div>
+      <div class="text-center mb-5">
+        <p>We’ve successfully helped these brands grow their
+          business.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="card project-card">
+            <div class="image-wrap">
+              <img src="../landing/img/FOTO/4.png" alt="Amanaia Restaurant" />
+              <a href="#" class="btn-fab" aria-label="Lihat Amanaia">
+                <i class="bi bi-arrow-right fs-5"></i>
+              </a>
+            </div>
+            <div class="card-body pt-3">
+              <h5 class="card-title font-serif">Amanaia</h5>
+              <div class="card-subtitle">Food and
+                Beverages</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card project-card">
+            <div class="image-wrap">
+              <img src="../landing/img/FOTO/4.png" alt="Marbella Place Hotel" />
+              <a href="#" class="btn-fab" aria-label="Lihat Marbella Place">
+                <i class="bi bi-arrow-right fs-5"></i>
+              </a>
+            </div>
+            <div class="card-body pt-3">
+              <h5 class="card-title font-serif">Marbella
+                Place</h5>
+              <div class="card-subtitle">Hotel and
+                Travel</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card project-card">
+            <div class="image-wrap">
+              <img src="../landing/img/FOTO/4.png" alt="Polytron Electric Vehicle" />
+              <a href="#" class="btn-fab" aria-label="Lihat Polytron">
+                <i class="bi bi-arrow-right fs-5"></i>
+              </a>
+            </div>
+            <div class="card-body pt-3">
+              <h5 class="card-title font-serif">Polytron</h5>
+              <div class="card-subtitle">Technology</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="text-center my-5">
+        <p>and the others for more than:</p>
+      </div>
+    </div>
+    <div class="row align-items-center g-0 metric-row">
+      <div class="col-lg-1 d-none d-lg-block"></div>
+      <div class="col-lg-5">
+        <div class="d-flex align-items-center justify-content-center justify-content-lg-end metric-flex">
+          <div class="col-auto">
+            <div class="metric-number font-serif counter" data-target="65">
+              0
+            </div>
+          </div>
+          <div class="col-auto ps-3">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="metric-plus font-serif">++</div>
+              <p class="metric-text font-serif mb-0">Project<br />Finished</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="pill-img pill-img-bleed-right">
+          <img src="../landing/img/FOTO/13.png" alt="Food platter" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="text-center my-4">
+        <p>and</p>
+      </div>
+    </div>
+    <div class="row align-items-center g-0 metric-row">
+      <div class="col-lg-6 order-lg-1">
+        <div class="pill-img pill-img-bleed-left">
+          <img src="../landing/img/FOTO/13.png" alt="Cafe interior" />
+        </div>
+      </div>
+
+      <div class="col-lg-5 order-lg-2">
+        <div class="d-flex align-items-center justify-content-center justify-content-lg-start metric-flex">
+          <div class="col-auto">
+            <div class="metric-number font-serif counter" data-target="31">
+              0
+            </div>
+          </div>
+          <div class="col-auto ps-3">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="metric-plus font-serif">++</div>
+              <p class="metric-text font-serif mb-0">Brand<br />Partners</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1 order-lg-3 d-none d-lg-block"></div>
+    </div>
+  </section>
+  <section id="section3" class="background-section">
+    <div class="container content-wrapper">
+
+      <h2 class="text-center main-title">What we do?</h2>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="service-card">
+            <h3 class="service-title">Content Marketing</h3>
+            <p class="service-description">Leverage content from
+              creators who already have an audience. Fast,
+              cost-efficient, and effective in increasing
+              engagement organically.</p>
+            <div class="service-icon">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
         </div>
 
-        <!-- Bottom bar -->
-        <div class="cta-bottom">
+        <div class="col-md-6 col-lg-5">
+          <div class="service-card">
+            <h3 class="service-title">Growth Marketing</h3>
+            <p class="service-description">A data-driven growth
+              solution with rapid iteration cycles. Build,
+              measure, and learn for continuous optimization
+              and sustainable results.</p>
+            <div class="service-icon">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-5">
+          <div class="service-card">
+            <h3 class="service-title">Narrative Marketing</h3>
+            <p class="service-description">Create emotional
+              connections through authentic storytelling,
+              enhance brand recall, and differentiate your
+              business from competitors.</p>
+            <div class="service-icon">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-5">
+          <div class="service-card">
+            <h3 class="service-title">Intellectual Property</h3>
+            <p class="service-description">Develop original
+              campaign ideas, events, and creative concepts
+              that strengthen brand identity, build
+              recognition, and position your brand as a
+              thought leader in the industry.</p>
+            <div class="service-icon">
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center footer-text mx-auto">
+        By implementing KPI-driven marketing, we set clear
+        objectives, track measurable progress, and optimize every
+        campaign to ensure maximum impact and sustainable business
+        growth.
+      </p>
+
+    </div>
+  </section>
+  <section id="section4" class="customer-section">
+    <div class="container text-center">
+      <h2 class="customer-title">Our Happy Customer</h2>
+    </div>
+
+    <section class="splide" id="logo-slider" aria-label="Our Happy Customer Logos">
+      <div class="splide__track">
+        <ul class="splide__list">
+
+          <li class="splide__slide">
+            <img src="../landing/img/ICONS/3.png" alt="Aesthete">
+          </li>
+          <li class="splide__slide">
+            <img src="../landing/img/ICONS/4.png" alt="Polytron">
+          </li>
+          <li class="splide__slide">
+            <img src="../landing/img/ICONS/5.png" alt="Macs">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/amanaia.png" alt="amanaia">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-5.png" alt="Brand 5">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-6.png" alt="Brand 6">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-7.png" alt="Brand 7">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-8.png" alt="Brand 8">
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <div class="container text-center">
+      <p class="example-text">(this part is an example. And will be a
+        slideshow of brands)</p>
+    </div>
+  </section>
+
+    <section class="growth-plan-section">
         <div class="container">
-            <div class="d-flex align-items-center justify-content-between gap-3" style="margin-bottom: -10rem;">
-            <!-- Brand logo lebih besar -->
-            <div class="d-flex align-items-center gap-2" >
-                <img src="../landing/img/logo/PNG/elden png white_1.png" alt="Elden" style="height:200px; " loading="lazy">
-            </div>
-
-            <!-- Sosmed kanan (PNG) -->
-            <div class="d-flex align-items-center gap-3">
-                <a class="icon-ring" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <img class="icon-img" src="../landing/img/ICONS/6.png" alt="WhatsApp" loading="lazy">
-                </a>
-                <a class="icon-ring" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                <img class="icon-img" src="../landing/img/ICONS/7.png" alt="Instagram" loading="lazy">
-                </a>
-                <a class="icon-ring" href="mailto:hello@elden.id" aria-label="Email">
-                <img class="icon-img" src="../landing/img/ICONS/8.png" alt="Email" loading="lazy">
-                </a>
-            </div>
-            </div>
-        </div>
-        </div>
-
-    </div>
-    </section>
-
-    <section id="" class="footer py-5" style="margin-top: -10rem;">
-        <div class="container" style="margin-top: 10rem;">
-
-            <div class="text-center">
-                <img class="img-fluid" src="../landing/img/LOGO/PNG/elden png white_1.png" style="width: 200px;"/>
-            </div>
-
-            <div class="text-center">
-                <div class="" style="margin-bottom: -2rem; margin-right: 11rem;">
-                    <p style="font-size: 20px;">One and Only</p>
+            <div class="row mb-5 pb-5">
+                <div class="col-lg-8 col-md-10">
+                    <h1 class="display-3">Discuss your growth plan!</h1>
+                    <p class="lead mt-3">
+                        We'll be happy to assist you in developing a marketing plan that aligns with your goals and drives measurable results
+                    </p>
                 </div>
-                <div>
+            </div>
 
-                    <p class="display-1">Network</p>
-                </div>
-
-                <div class="" style="margin-top: -2.5rem; margin-left: 10rem;">
-
-                    <p style="font-size: 20px">you’ll ever need </p>
-                </div>
+            <div class="row align-items-center mt-5">
                 
-            </div>
-            <div class="row">
-                <div class="text-center">
-                    <p class="">Elden is a strategic partner for businesses that want to grow fast, connect with audiences on an emotional level, and maximize the potential of digital content.</p>
+                <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <img src="../landing/img/LOGO/PNG/elden png white_1.png" alt="Elden Logo" class="elden-logo">
+                </div>
+
+                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center gap-3">
+                    
+                    <a href="#" aria-label="WhatsApp">
+                        <img src="../landing/img/ICONS/6.png" alt="WhatsApp" class="social-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Instagram">
+                        <img src="../landing/img/ICONS/7.png" alt="Instagram" class="social-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Email">
+                        <img src="../landing/img/ICONS/8.png" alt="Email" class="social-icon">
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- WhatsApp Bubble -->
-    <div class="whatsapp-bubble" onclick="window.location.href='https://wa.me/1234567890'">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+
+  <footer class="site-footer">
+
+    <div class="container-inner">
+
+      <nav class="py-4 text-center">
+        <img src="../landing/img/LOGO/PNG/elden png white_1.png" alt="Elden Logo" class="footer-logo">
+      </nav>
+
+      <main class="footer-content-main d-flex align-items-center justify-content-center">
+        <div style="max-width: 700px;">
+          <div class="d-flex flex-column">
+
+            <span class="title-sub">
+              One and only
+            </span>
+
+            <h1 class="title-main my-n2">
+              Network
+            </h1>
+
+            <span class="title-sub align-self-end">
+              you'll ever need
+            </span>
+
+          </div>
+        </div>
+      </main>
+
+      <div class="footer-bottom py-4 text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <p class="footer-caption">
+              Elden is a strategic partner for businesses that want to grow fast, connect with audiences on an emotional
+              level, and maximize the potential of digital content.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTopBtn">
-        <img src="" alt="Back to Top">
-    </button>
+  <div class="whatsapp-bubble" onclick="window.location.href='https://wa.me/1234567890'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </div>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    
-    <script>
-        // Dark mode toggle
-        document.getElementById('toggleDarkMode').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+
+  <button class="back-to-top" id="backToTopBtn">
+    <!-- <img src="" alt="Back to Top"> -->
+     <i class="bi bi-arrow-up-circle" style="font-size: 2rem; color: white;"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+  <script>
+
+    // Dark mode toggle
+    document
+      .getElementById("toggleDarkMode")
+      .addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+      });
+
+    // Back to top button visibility
+    window.onscroll = function () {
+      var backToTopBtn = document.getElementById("backToTopBtn");
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+
+    // Back to top button functionality
+    document
+      .getElementById("backToTopBtn")
+      .addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      function animateCounter(el, duration = 2000) {
+        const target = +el.dataset.target;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+
+          const currentValue = Math.floor(progress * target);
+          el.textContent = currentValue;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = target;
+          }
+        }
+        requestAnimationFrame(update);
+      }
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            animateCounter(el, 1500);
+            observer.unobserve(el);
+          }
         });
+      }, observerOptions);
 
-        // Back to top button visibility
-        window.onscroll = function () {
-            var backToTopBtn = document.getElementById("backToTopBtn");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        };
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        observer.observe(counter);
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#logo-slider', {
+        type: 'loop', // Membuatnya berputar terus menerus
+        drag: 'free', // Bisa di-drag bebas
+        focus: 'center', // Fokus di tengah (opsional tapi bagus)
+        perPage: 4, // 4 logo terlihat di desktop
+        autoScroll: {
+          speed: 1, // Kecepatan scroll (1 = normal, 2 = 2x lebih cepat)
+          pauseOnHover: true, // Berhenti saat mouse di atasnya
+        },
+        arrows: false, // Sembunyikan panah
+        pagination: false, // Sembunyikan titik-titik navigasi
+        gap: '4rem', // Jarak antar logo
+        breakpoints: {
+          992: { // Tablet
+            perPage: 3,
+            gap: '3rem',
+          },
+          767: { // Mobile
+            perPage: 2,
+            gap: '2rem',
+          }
+        }
+      }).mount(window.splide.Extensions); // Penting untuk memuat ekstensi AutoScroll
+    });
+  </script>
 
-        // Back to top button functionality
-        document.getElementById("backToTopBtn").addEventListener("click", function () {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
+  <script>
+    // Dark mode toggle
+    document.getElementById('toggleDarkMode').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
 
-    <script>
-        new Splide( '.splide', {
-            type    : 'loop',
-            autoplay: 'pause',
-            perPage : 3,
-            } );
-    </script>
+    // Back to top button visibility
+    window.onscroll = function () {
+      var backToTopBtn = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
 
+    // Back to top button functionality
+    document.getElementById("backToTopBtn").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 
 </html>

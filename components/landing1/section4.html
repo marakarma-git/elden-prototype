@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Happy Customer (Splide.js)</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      /* Mencegah scroll horizontal yang tidak diinginkan dari slider */
+      overflow-x: hidden;
+    }
+
+    .customer-section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .customer-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: 2.75rem;
+      color: #222;
+      margin-bottom: 3rem;
+    }
+
+    .example-text {
+      color: #e53e3e; /* Warna merah seperti di gambar */
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+    
+    /* Style untuk Splide.js */
+    .splide__slide {
+      /* Memastikan logo berada di tengah slide secara vertikal */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+
+    .splide__slide img {
+      max-height: 60px; /* Atur tinggi maksimal logo Anda */
+      width: auto;
+      max-width: 100%;
+      filter: grayscale(100%); /* Logo dibuat abu-abu */
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    /* Efek hover pada logo */
+    .splide__slide:hover img {
+      filter: grayscale(0%); /* Logo kembali berwarna */
+      opacity: 1;
+      transform: scale(1.05); /* Sedikit membesar */
+    }
+    
+    /* Menyembunyikan track Splide saat JS belum dimuat */
+    .splide:not(.is-active) .splide__track {
+      visibility: hidden;
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="customer-section">
+    <div class="container text-center">
+      
+      <h2 class="customer-title">Our Happy Customer</h2>
+
+    </div>
+
+    <section class="splide" id="logo-slider" aria-label="Our Happy Customer Logos">
+      <div class="splide__track">
+        <ul class="splide__list">
+          
+          <li class="splide__slide">
+            <img src="httpsGANTI_DENGAN_LOGO_ANDA/aesthete.png" alt="Aesthete">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/polytron.png" alt="Polytron">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/macs.png" alt="Macs">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/amanaia.png" alt="amanaia">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-5.png" alt="Brand 5">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-6.png" alt="Brand 6">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-7.png" alt="Brand 7">
+          </li>
+          <li class="splide__slide">
+            <img src="GANTI_DENGAN_LOGO_ANDA/brand-8.png" alt="Brand 8">
+          </li>
+          
+          </ul>
+      </div>
+    </section>
+
+    <div class="container text-center">
+        <p class="example-text">(this part is an example. And will be a slideshow of brands)</p>
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#logo-slider', {
+        type: 'loop', // Membuatnya berputar terus menerus
+        drag: 'free', // Bisa di-drag bebas
+        focus: 'center', // Fokus di tengah (opsional tapi bagus)
+        perPage: 4, // 4 logo terlihat di desktop
+        autoScroll: {
+          speed: 1, // Kecepatan scroll (1 = normal, 2 = 2x lebih cepat)
+          pauseOnHover: true, // Berhenti saat mouse di atasnya
+        },
+        arrows: false, // Sembunyikan panah
+        pagination: false, // Sembunyikan titik-titik navigasi
+        gap: '4rem', // Jarak antar logo
+        breakpoints: {
+          992: { // Tablet
+            perPage: 3,
+            gap: '3rem',
+          },
+          767: { // Mobile
+            perPage: 2,
+            gap: '2rem',
+          }
+        }
+      }).mount(window.splide.Extensions); // Penting untuk memuat ekstensi AutoScroll
+    });
+  </script>
+
+</body>
+</html>
